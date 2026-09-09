@@ -2,7 +2,7 @@
 // 策略：导航请求网络优先（强制绕过 HTTP 缓存，保证线上更新立刻传到），离线回退缓存；
 //      静态资源（图片/图标）缓存优先，首次在线浏览后写入，之后断网也能开；
 //      跨域请求（Open-Meteo 天气）不缓存，直接走网络。
-const CACHE = 'roadbook-v20260909-1807';
+const CACHE = 'roadbook-v20260909-1833';
 const CORE = ['./', './index.html'];
 
 self.addEventListener('install', function (e) {
