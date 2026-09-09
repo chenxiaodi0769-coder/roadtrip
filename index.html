@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="FwiaNpneDytba9YGE2uXKF">
+<head data-page-node-id="XIbrAyoOPDbBpVvtZ9YVAn">
+<meta charset="UTF-8" data-page-node-id="H6Bo6xqRm1zrZuumZOPZvd">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="leA3xsvY7jQCr0sarFOVyv">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="rt-build" content="20260908-1612">
+<title>中秋+国庆游 9.18-10.4</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+<style>
+  :root{
+    --bg:#f4f1ea; --card:#ffffff; --ink:#1f1c18; --sub:#6b6358;
+    --line:#e7e1d6; --gold:#c8881f; --teal:#2f8f83; --red:#d9534f;
+    --blue:#3a7bd5; --tag:#f0ece2; --chip:#fff;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:17px;line-height:1.6;}
+  header{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.96);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 12px 8px;}
+  .hrow{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
+  .htitle{font-size:18px;font-weight:800;letter-spacing:.5px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;}
+  .ht-region{font-size:12px;font-weight:600;color:var(--sub);}
+  .bar{display:flex;gap:7px;overflow-x:auto;padding:9px 0 3px;scrollbar-width:none;}
+  .bar::-webkit-scrollbar{display:none;}
+  .chip{flex:0 0 auto;padding:6px 11px;border:1px solid var(--line);border-radius:20px;
+    background:var(--chip);font-size:13px;color:var(--sub);white-space:nowrap;cursor:pointer;}
+  .chip.on{background:var(--gold);color:#fff;border-color:var(--gold);font-weight:700;}
+  .chip .d{font-weight:700;}
+  main{padding:12px 12px 96px;max-width:640px;margin:0 auto;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;position:relative;
+    padding:14px 15px 13px;margin:0 0 14px;box-shadow:0 2px 10px rgba(0,0,0,.04);scroll-margin-top:96px;}
+  .card.today{border:2px solid var(--gold);box-shadow:0 4px 18px rgba(200,136,31,.18);}
+  /* 玩/住/吃 浮层快捷定位：固定在视口右侧垂直居中，弱化、覆盖内容；JS 跟随当前日重建按钮 */
+  .locbar{position:fixed;top:50%;right:10px;transform:translateY(-50%);z-index:48;
+    display:flex;flex-direction:column;gap:8px;opacity:.74;transition:opacity .18s ease;pointer-events:auto;}
+  .locbar:hover,.locbar:focus-within{opacity:1;}
+  .locbar .lb{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:25px;padding:0 9px;
+    font-size:12px;font-weight:700;border-radius:13px;background:rgba(255,255,255,.89);
+    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);cursor:pointer;
+    border:1px solid transparent;transition:transform .12s,box-shadow .12s;}
+  .locbar .lb:active{transform:scale(.93);}
+  .locbar .lb-play{color:#3B6D11;border-color:#bcd9a3;}
+  .locbar .lb-stay{color:#185FA5;border-color:#bcd2ee;}
+  .locbar .lb-eat{color:#D85A30;border-color:#f0c4ad;}
+  .crow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 10px;}
+  .crow-in{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;}
+  .cd{font-size:20px;font-weight:800;}
+  .cdate{font-size:13px;color:var(--sub);}
+  .ckm{font-size:12px;color:var(--sub);background:var(--tag);border-radius:8px;padding:2px 8px;}
+  .team{display:inline-block;font-size:11px;color:var(--sub);background:var(--tag);
+    border-radius:6px;padding:2px 7px;margin:0;font-weight:400;}
+  .wx-cloth{font-size:13px;color:#444;margin-top:5px;line-height:1.5;white-space:normal;}
+  .sec{display:flex;gap:8px;padding:7px 0;border-top:1px dashed var(--line);scroll-margin-top:90px;}
+  .sec:first-of-type{border-top:none;}
+  .ico{flex:0 0 22px;font-size:18px;display:flex;align-items:flex-start;line-height:1;}
+  .body{flex:1;min-width:0;}
+  .lbl{font-size:12px;color:var(--sub);margin-bottom:1px;}
+  .txt{font-size:16px;}
+  .poi{margin:4px 0;}
+  .thumbwrap{display:block;position:relative;margin:6px 0 8px;cursor:pointer;}
+  .thumbs2{display:flex;gap:6px;margin:6px 0 8px;}
+  .thumbs2 a{flex:1;position:relative;display:block;cursor:pointer;}
+  .thumbs2 img{width:100%;height:96px;object-fit:cover;border-radius:10px;display:block;background:#e9e4da;margin:0;}
+  .thumbwrap .thumb{width:100%;height:128px;object-fit:cover;border-radius:10px;display:block;background:#e9e4da;margin:0;}
+  /* 缺图兜底：破图改为干净的地点占位卡（避免重复破图标） */
+  .thumb-ph{flex:1;width:100%;height:128px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    text-align:center;font-size:13px;line-height:1.45;color:#6b6358;padding:8px;box-sizing:border-box;margin:0;
+    background:linear-gradient(135deg,#efe9df,#e6dfd3);}
+  .pn{font-weight:700;cursor:pointer;}
+  .pn:active{opacity:.6;}
+  .pa{font-size:13px;color:var(--sub);}
+  .nav{display:inline-flex;align-items:center;gap:3px;margin-top:5px;background:var(--gold);color:#fff;text-decoration:none;
+    font-size:13px;font-weight:700;border-radius:9px;padding:6px 12px;}
+  .nav:active{opacity:.8;}
+  .copy{display:inline-flex;align-items:center;gap:3px;margin-top:5px;margin-left:8px;background:#fff;color:var(--sub);
+    font-size:13px;border-radius:9px;padding:6px 11px;border:1px solid var(--line);cursor:pointer;}
+  .tel{display:inline-flex;align-items:center;gap:3px;margin-top:5px;margin-left:8px;background:#fff;color:var(--sub);
+    font-size:13px;border-radius:9px;padding:6px 11px;border:1px solid var(--line);text-decoration:none;}
+  .tel:active{opacity:.6;}
+  .copy:active{opacity:.6;}
+  .toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:rgba(31,28,24,.92);
+    color:#fff;font-size:14px;padding:9px 16px;border-radius:22px;z-index:50;opacity:0;
+    transition:opacity .25s;pointer-events:none;max-width:80%;text-align:center;}
+  .toast.show{opacity:1;}
+  .warn{background:#fdf3ec;}
+  .warn .txt{color:#a85a1c;font-size:15px;}
+  .note{font-size:12px;color:var(--sub);margin-top:3px;}
+  .feature{font-size:12px;color:#2e7d4f;margin-top:3px;font-weight:600;}
+  .booked{display:inline-block;margin-left:6px;padding:0 5px;border:1px solid #b7dfc4;border-radius:4px;color:#2e7d4f;font-size:11px;font-weight:700;vertical-align:middle;}
+  .staydate{font-size:12px;color:var(--sub);margin-top:4px;}
+  /* 提醒弱化：无背景块、浅灰小字、细左边线，置卡片底 */
+  .tip-sec .ico{flex:0 0 22px;padding-top:1px;}
+.tip-sec .tip{padding:0 10px 6px;}
+  .tip{margin:0;padding:6px 10px;border-left:2px solid #e3ddd0;color:#9a948a;
+    font-size:12px;line-height:1.5;background:transparent;
+    display:block;clear:both;width:100%;box-sizing:border-box;align-self:flex-start;}
+  .tip .ti{margin-right:4px;}
+  /* 底部冷知识入口：文案（跑马灯）+ 上拉/点击动效提示，弱化呈现 */
+  .kbbar{display:flex;align-items:center;gap:8px;margin-top:8px;max-width:640px;
+    padding:7px 10px;background:rgba(253,243,224,.94);border:1px solid #ecd9b0;
+    border-radius:10px;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .kbbar .kb-grab{display:none;}
+  .kbbar .kb-go{flex:0 0 auto;font-size:11px;color:#8a6a2a;border-left:1px solid #ecd9b0;padding-left:8px;}
+  @keyframes kbBob{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(-3px);opacity:1}}
+  .kbbar .kb-row{display:flex;align-items:center;gap:13px;width:100%;}
+  .kbbar .kb-ico{font-size:15px;flex:0 0 auto;}
+  .kbbar .kb-track{flex:1 1 auto;overflow:hidden;white-space:nowrap;position:relative;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 14px,#000 calc(100% - 14px),transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 14px,#000 calc(100% - 14px),transparent);}
+  .kbbar .kb-text{display:inline-block;font-size:13px;color:#7a5a22;font-weight:600;padding-left:8px;}
+  .kbbar .kb-text.mq{animation:kbmarq 14s linear infinite;}
+  @keyframes kbmarq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  @keyframes kbInRight{0%{transform:translateX(100%);opacity:0}100%{transform:translateX(0);opacity:1}}
+  .kb-text.kb-in-right{animation:kbInRight .55s cubic-bezier(.22,.61,.36,1);}
+  /* 冷知识翻阅视图（全屏） */
+  .kbov{position:fixed;inset:0;z-index:60;background:rgba(18,26,36,.96);display:none;flex-direction:column;
+    padding:18px 16px;color:#fff;box-sizing:border-box;overflow:hidden;}
+  .kbov.on{display:flex;}
+  /* 装饰层：母题随开随机切换，由 JS 注入 SVG */
+  .kbov .kb-deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .kbov .kb-deco svg{display:block;width:100%;height:100%;}
+  /* 四套母题：遮罩底色 + 主卡描边 + 关闭钮描边 */
+  .kbov.m-osmanthus{background:#3a2a1e;}
+  .kbov.m-green{background:#1e4a40;}
+  .kbov.m-tiedye{background:#1f3a6e;}
+  .kbov.m-osmanthus .kb-card{border:1.5px solid #BA7517;}
+  .kbov.m-green .kb-card{border:1.5px solid #0F6E56;}
+  .kbov.m-tiedye .kb-card{border:1.5px solid #185FA5;}
+  .kbov.m-osmanthus .kb-x2{border-color:rgba(234,181,58,.5);}
+  .kbov.m-green .kb-x2{border-color:rgba(15,110,86,.6);}
+  .kbov.m-tiedye .kb-x2{border-color:rgba(24,95,165,.6);}
+  .kbov.m-route{background:#EAD9BE;}
+  .kbov.m-camp{background:#1F3A5F;}
+  .kbov.m-sky{background:#BBD7F0;}
+  .kbov.m-route .kb-card{border:1.5px solid #E08A3C;}
+  .kbov.m-camp .kb-card{border:1.5px solid #C8881F;}
+  .kbov.m-sky .kb-card{border:1.5px solid #185FA5;}
+  .kbov.m-route .kb-x2{border-color:rgba(224,138,60,.6);background:rgba(90,61,16,.10);color:#5a3d10;}
+  .kbov.m-camp .kb-x2{border-color:rgba(200,136,31,.6);}
+  .kbov.m-sky .kb-x2{border-color:rgba(24,95,165,.5);background:rgba(12,68,124,.10);color:#0c447c;}
+  .kbov.m-route .kb-hd .t,.kbov.m-route .kb-cnt,.kbov.m-route .kb-dots{color:#5a3d10;}
+  .kbov.m-sky .kb-hd .t,.kbov.m-sky .kb-cnt,.kbov.m-sky .kb-dots{color:#0c447c;}
+  /* 启动图母题：复用冷知识三套，随机展示 */
+  #splash .sp-deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  #splash .sp-deco svg{display:block;width:100%;height:100%;}
+  #splash.m-osmanthus{background:#3a2a1e;}
+  #splash.m-green{background:#1e4a40;}
+  #splash.m-tiedye{background:#1f3a6e;}
+  #splash.m-route{background:#EAD9BE;}
+  #splash.m-camp{background:#1F3A5F;}
+  #splash.m-sky{background:#BBD7F0;}
+  /* 头部 / 底部层级 */
+  .kbov .kb-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;position:relative;z-index:3;}
+  .kbov .kb-hd .t{font-weight:800;font-size:15px;}
+  .kbov .kb-cnt{font-size:12px;color:#ffd9a0;margin-right:10px;}
+  .kbov .kb-foot{position:relative;z-index:3;margin-top:10px;}
+  /* 翻页改由点两侧露边卡 / 滑动 / 键盘，底部不再放文字按钮 */
+  .kbov .kb-x2{display:block;margin:14px auto 0;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);color:#fff;
+    border-radius:22px;padding:11px 36px;font-size:15px;font-weight:700;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  /* 牌堆 */
+  .kbov .kb-body{flex:1;display:flex;align-items:center;justify-content:center;min-height:0;position:relative;z-index:2;}
+  .kbov .kb-deck{position:relative;width:100%;max-width:360px;}
+  .kbov .kb-back{position:absolute;inset:0;border-radius:18px;z-index:1;
+    background:linear-gradient(135deg,#2c3654,#1c2540);border:1px solid rgba(255,255,255,.10);
+    box-shadow:0 8px 20px rgba(0,0,0,.35);}
+  .kbov .kb-back.kb-back3{background:linear-gradient(135deg,#222b46,#141b30);z-index:0;transform:translate(0,24px) rotate(0) scale(.86);}
+  .kbov .kb-back.kb-back1{transform:translate(-38px,10px) rotate(-7deg) scale(.95);cursor:pointer;}
+  .kbov .kb-back.kb-back2{transform:translate(38px,16px) rotate(7deg) scale(.92);cursor:pointer;}
+  .kbov .kb-card{position:relative;z-index:5;width:100%;height:440px;max-height:80vh;overflow:auto;
+    background:linear-gradient(135deg,#fff8ec,#fbf2df);color:#5b4a2e;border-radius:18px;padding:26px 22px;
+    display:flex;flex-direction:column;box-shadow:0 14px 40px rgba(0,0,0,.5);}
+  .kbov .kb-d{font-size:12px;font-weight:800;color:#b07a1e;letter-spacing:1px;}
+  .kbov .kb-main{font-size:18px;font-weight:800;margin-top:12px;line-height:1.5;color:#4a3a1e;}
+  .kbov .kb-more{font-size:14px;color:#7a6a4e;line-height:1.6;margin-top:14px;border-top:1px dashed #ecdcc0;padding-top:12px;}
+  .kbov .kb-item{margin-bottom:16px;}
+  .kbov .kb-item:last-child{margin-bottom:0;}
+  .kbov .kb-rand{margin-top:auto;width:100%;background:linear-gradient(135deg,#ffd9a0,#f3b95e);border:none;color:#5a3d10;font-size:14px;font-weight:800;
+    padding:11px 18px;border-radius:14px;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .kbov .kb-dots{font-size:11px;color:rgba(255,255,255,.6);white-space:nowrap;text-align:center;margin:2px 0 8px;}
+  footer{text-align:center;font-size:12px;color:var(--sub);padding:6px 0 30px;}
+  .topbtn{position:fixed;right:14px;bottom:82px;z-index:45;width:42px;height:42px;border-radius:50%;
+    background:rgba(255,253,247,.98);color:#b8860b;border:1px solid #e6cf9f;
+    font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 1px 6px rgba(0,0,0,.12);cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .sunmt{margin:9px 0 2px;padding:10px 12px;border:1px solid #f0c987;border-radius:12px;
+    background:linear-gradient(135deg,#fff8ec,#fef3e0);}
+  .sunmt .sm-h{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:800;color:#a35c00;margin-bottom:5px;}
+  .sunmt .sm-row{font-size:12px;color:var(--sub);line-height:1.5;margin:2px 0;}
+  .sunmt .sm-prob{font-size:13px;color:var(--ink);margin:5px 0 2px;}
+  .sunmt .sm-prob b{font-size:18px;font-weight:800;margin:0 2px;}
+  .sunmt .sm-tag{font-size:12px;font-weight:700;padding:1px 8px;border-radius:10px;
+    background:#efe7d6;color:#6b6358;border:1px solid #d9cdb4;}
+  .sunmt .sm-cum{font-size:11px;color:var(--sub);margin-top:6px;border-top:1px dashed #e9d9b8;padding-top:5px;}
+  /* 启动图：视觉重心在倒计时（动效聚焦），背景压暗聚光不抢戏 */
+  #splash{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;color:#fff;padding:24px;
+    background:radial-gradient(circle at 50% 44%,#3a6ea5 0%,#1f3a52 52%,#101d28 100%);
+    transition:opacity .6s ease;overflow:hidden;}
+  #splash.hide{opacity:0;pointer-events:none;}
+  #splash .sp-skip{position:absolute;top:16px;right:16px;font-size:13px;color:rgba(255,255,255,.8);z-index:3;
+    background:rgba(0,0,0,.22);border:none;border-radius:16px;padding:5px 12px;cursor:pointer;}
+  #splash .sp-count-wrap{position:relative;margin:26px 0 4px;display:flex;align-items:center;justify-content:center;
+    animation:countIn .7s ease .15s both;}
+  #splash .sp-glow{position:absolute;top:44%;left:50%;width:230px;height:230px;margin:-115px 0 0 -115px;border-radius:50%;z-index:0;
+    background:radial-gradient(circle,rgba(255,200,120,.45) 0%,rgba(255,170,90,.18) 45%,rgba(255,170,90,0) 70%);
+    animation:glowPulse 2.6s ease-in-out infinite;}
+  #splash .sp-count{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    font-weight:800;line-height:1;letter-spacing:1px;
+    text-shadow:0 4px 22px rgba(255,180,90,.45),0 2px 6px rgba(0,0,0,.35);
+    font-variant-numeric:tabular-nums;}
+  #splash .sp-count .sp-pre{font-size:16px;font-weight:500;opacity:.66;letter-spacing:2px;white-space:nowrap;margin-bottom:4px;}
+  #splash .sp-count .sp-num{font-size:104px;font-weight:800;line-height:1;letter-spacing:1px;}
+  #splash .sp-count .sp-unit{font-size:26px;font-weight:700;white-space:nowrap;}
+  #splash .sp-count .sp-numwrap{display:flex;align-items:baseline;justify-content:center;gap:8px;}
+  #splash .sp-tip{font-size:13px;opacity:.82;margin-top:8px;letter-spacing:1px;}
+  #splash .sp-reco{display:none;flex-direction:column;align-items:center;max-width:82%;margin:22px 0 6px;}
+  #splash .sp-reco.show{display:flex;animation:spTopIn .6s ease both;}
+  #splash .sp-day{font-size:15px;color:#ffd9a0;margin-bottom:16px;letter-spacing:1.5px;font-weight:600;}
+  #splash .sp-line{font-size:22px;font-weight:700;line-height:1.55;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.32);}
+  #splash .sp-wx{font-size:13px;color:#fff;background:rgba(255,255,255,.16);border-radius:14px;padding:5px 13px;margin-top:20px;letter-spacing:.5px;}
+  #splash .sp-count-wrap,#splash .sp-reco,#splash .sp-tip,#splash .sp-enter{position:relative;z-index:2;}
+  #splash .sp-enter{margin-top:24px;background:rgba(255,255,255,.94);color:#7a4a16;border:none;
+    font-size:15px;font-weight:700;border-radius:24px;padding:10px 28px;cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.22);animation:spTopIn .6s ease .5s both;}
+  @keyframes spTopIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes countIn{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes glowPulse{0%,100%{transform:scale(.92);opacity:.7}50%{transform:scale(1.08);opacity:1}}
+
+.topbtn{position:fixed;right:14px;bottom:66px;z-index:30;width:auto;box-sizing:border-box;height:42px;min-width:42px;padding:0 14px;border-radius:21px;
+  background:rgba(255,253,247,.98);color:#b8860b;border:1px solid #e6cf9f;
+  font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:4px;
+  box-shadow:0 1px 6px rgba(0,0,0,.12);cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.memoov{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s ease;}
+.memoov.on{opacity:1;visibility:visible;}
+.memo-sheet{position:relative;z-index:1;width:100%;max-width:680px;max-height:88vh;display:flex;flex-direction:column;background:var(--bg);border-radius:18px 18px 0 0;box-shadow:0 -10px 34px rgba(0,0,0,.22);transform:translateY(100%);transition:transform .3s cubic-bezier(.2,.7,.3,1);overflow:hidden;}
+.memoov.on .memo-sheet{transform:translateY(0);}
+.memo-grip{height:18px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;background:var(--bg);}
+.memo-grip:before{content:"";width:38px;height:4px;border-radius:2px;background:#d6cab0;}
+.memo-hd{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;padding:4px 16px 12px;background:var(--bg);}
+.memo-t{font-size:16px;font-weight:800;color:var(--ink);}
+.memo-acts{display:flex;align-items:center;gap:2px;}
+.memo-x{font-size:13px;color:var(--sub);background:none;border:none;padding:6px 8px;cursor:pointer;}
+.memo-body{flex:1;padding:6px 16px 20px;overflow:auto;-webkit-overflow-scrolling:touch;}
+.memo-sec{margin:18px 0 4px;font-size:15px;font-weight:800;color:#a35c00;}
+.memo-sec:first-child{margin-top:4px;}
+.memo-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid #efeadf;font-size:14px;color:var(--ink);line-height:1.5;cursor:pointer;}
+.memo-item .cb{flex:0 0 auto;width:20px;height:20px;border:2px solid #c9bfa9;border-radius:6px;margin-top:1px;box-sizing:border-box;}
+.memo-item.done .cb{background:#639922;border-color:#639922;}
+.memo-item.done .cb:after{content:"";display:block;width:5px;height:10px;margin:2px auto 0;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);}
+.memo-item.done .tx{color:var(--sub);text-decoration:line-through;}
+.memo-note{margin-top:18px;padding:10px 12px;border:1px dashed #d9cdb4;border-radius:10px;font-size:12px;color:var(--sub);line-height:1.6;}
+.memo-foot{flex:0 0 auto;display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line);}
+.memo-fbtn{flex:1;height:46px;border-radius:12px;font-size:15px;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.memo-fbtn.pri{background:#639922;border-color:#639922;color:#fff;}
+.memo-fbtn.wide{flex:1.85;}
+.memo-confirm{position:absolute;inset:0;z-index:10;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.45);padding:24px;}
+.memo-confirm.on{display:flex;}
+.memo-cbox{background:var(--card);border-radius:14px;max-width:300px;width:100%;padding:18px 18px 14px;}
+.memo-ct{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:10px;}
+.memo-cx{font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:16px;}
+.memo-cx b{color:var(--ink);}
+.memo-cacts{display:flex;gap:10px;}
+.memo-cbtn{flex:1;height:44px;border-radius:12px;font-size:14px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;}
+.memo-cbtn.danger{background:#A32D2D;color:#fff;border-color:#A32D2D;}
+
+.eat-hd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.eat-hd .pn{font-size:17px;color:#2c2c2a;font-weight:700;line-height:1.35;}
+.eat-hd a.pn{text-decoration:underline;color:#2c2c2a;text-underline-offset:2px;text-decoration-thickness:.5px;}
+.eat-hd a.pn:hover{text-decoration:underline;}
+.poi.simple .pn{font-size:13px;color:#6f6c66;font-weight:600;}
+.eat-rate{flex:none;font-size:13px;color:#854f0b;font-weight:700;}
+.eat-rate::before{content:"\2605 ";}
+.eat-review{flex:none;display:inline-flex;align-items:center;background:var(--gold);color:#fff;text-decoration:none;
+  font-size:13px;font-weight:700;border-radius:9px;padding:3px 10px;}
+.eat-review:active{opacity:.8;}
+.eat-hd .copy{margin-top:0;margin-left:8px;padding:3px 9px;font-size:12px;}
+.eat-sec .poi + .poi{margin-top:9px;padding-top:9px;border-top:1px dashed #e6e1d8;}
+.eat-sub{display:flex;align-items:flex-start;gap:6px;margin-top:6px;font-size:13px;color:#8a857c;line-height:1.6;}
+.eb-t{flex:1;min-width:0;}
+.eat-sub .dish{display:inline-block;font-size:12px;color:#5a5852;background:#f1efe8;border-radius:10px;padding:1px 7px;margin:2px 4px 0 0;}
+.eb-l{font-size:11px;color:#a8a29a;margin-right:5px;}
+.eat-acts{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;}
+.eat-acts .nav,.eat-acts .eat-review{margin-top:0;font-size:13px;font-weight:700;padding:5px 12px;border-radius:9px;}
+.eat-sub .pa{font-size:13px;color:#8a857c;}
+
+  /* ===== 查看当日动线 ===== */
+  .rtbtn{margin-top:8px;background:transparent;border:1px solid var(--gold);color:var(--gold);
+    border-radius:12px;padding:5px 14px;font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;}
+  .rtline{margin-top:9px;font-size:13px;line-height:1.75;color:var(--sub);}
+  .rtline .rs-key{color:var(--gold);font-weight:700;}
+  .rtline .rs-opt{color:#9a9286;}
+  .rtline .rs-arw{color:#cfc8bc;margin:0 3px;}
+  .rtpanel{display:none;margin-top:10px;background:#faf7f0;border:1px solid var(--line);
+    border-radius:12px;padding:13px;}
+  .rtlegend{display:flex;gap:14px;font-size:12px;color:var(--sub);margin-bottom:12px;flex-wrap:wrap;}
+  .rtlegend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle;}
+  .dotk{background:var(--gold);} .dotn{background:#fff;border:1.5px solid var(--sub);}
+  .doto{background:#fff;border:1.5px dashed #9a9286;}
+  .rttl{position:relative;}
+  .rttl:before{content:"";position:absolute;left:51px;top:8px;bottom:8px;width:2px;background:var(--sub);}
+  .rtnode{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;position:relative;}
+  .rtnode:last-child{margin-bottom:0;}
+  .rttime{width:32px;text-align:right;font-size:13px;color:var(--sub);flex:0 0 32px;padding-top:1px;}
+  .rtdot{width:16px;height:16px;border-radius:50%;flex:0 0 16px;margin-top:2px;position:relative;z-index:1;}
+  .rk{background:var(--gold);}
+  .rn{background:#fff;border:2px solid var(--sub);}
+  .ro{background:#fff;border:2px dashed #9a9286;}
+  .rtbody{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:0;}
+  .rtname{font-size:15px;font-weight:700;}
+  .rttype{font-size:12px;color:var(--sub);margin-top:2px;}
+  .rtbot{margin-top:14px;padding-top:11px;border-top:1px solid var(--line);text-align:center;}
+  .rtclose{background:transparent;border:1px solid var(--sub);color:var(--sub);border-radius:12px;
+    padding:6px 22px;font-size:14px;cursor:pointer;font-family:inherit;}
+  /* ===== 底部当日动线：常驻简略版 + 半窗完整时间轴 ===== */
+  .rtbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,253,247,.97);
+    border-top:1px solid #e6dfcc;padding:7px 12px calc(8px + env(safe-area-inset-bottom));
+    cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .rtbar-in{max-width:640px;margin:0 auto;}
+  .rtgrab{width:38px;height:4px;border-radius:2px;background:#dcd2bb;margin:0 auto 7px;}
+  .rtrow{display:block;position:relative;}
+  .rtmini{font-size:12px;line-height:1.5;color:var(--sub);text-align:left;
+    padding-right:60px;word-break:break-all;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .rtmini .rtmini-t{color:var(--gold);font-weight:700;}
+  .rtmini .rs-key{color:var(--gold);font-weight:700;}
+  .rtmini .rs-opt{color:#9a9286;}
+  .rtmini .rs-arw{color:#cfc8bc;margin:0 3px;}
+  .rtmore{position:absolute;right:0;top:0;font-size:11px;color:#8a7a5e;
+    border:1px solid var(--line);border-radius:11px;padding:3px 9px;background:#fff;}
+  .rtchips{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;scrollbar-width:none;}
+  .rtchips::-webkit-scrollbar{display:none;}
+  .rtchip{flex:0 0 auto;min-width:84px;display:inline-flex;align-items:center;justify-content:center;
+    padding:5px 11px;border:1px solid var(--line);border-radius:13px;
+    background:#fff;font-size:12px;color:var(--sub);white-space:nowrap;cursor:pointer;}
+  .rtchip.on{background:var(--gold);color:#fff;border-color:var(--gold);font-weight:700;}
+  /* 当日动线半窗固定高度：切日不再跳动，长内容在 body 内滚动 */
+  #rtov .memo-sheet{height:82vh;}
+  #rtov .memo-body{flex:1 1 auto;min-height:0;}
+  .rtupd{position:fixed;left:0;right:0;top:0;z-index:60;background:var(--gold);color:#fff;
+    font-size:13px;padding:9px 12px;display:flex;align-items:center;justify-content:center;gap:10px;
+    padding-top:calc(9px + env(safe-area-inset-top));}
+  .rtupd button{background:#fff;color:var(--gold);border:none;border-radius:11px;
+    padding:4px 13px;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;}
+  .rtupd .rtupd-x{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.65);font-weight:400;}
+
+/* 说明浮层（路书怎么用） */
+#helpbtn{right:14px;bottom:116px;z-index:45;}
+
+/* 冷知识彩蛋按钮（浏览满时长后解锁，右侧说明上方抖动） */
+#eggbtn{position:fixed;right:14px;bottom:166px;z-index:46;width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,#f3b95e,#c8881f);color:#fff;border:2px solid #ffe2b0;
+  display:none;align-items:center;justify-content:center;font-size:13px;font-weight:700;cursor:pointer;
+  box-shadow:0 6px 16px rgba(184,117,23,.45);-webkit-tap-highlight-color:transparent;overflow:visible;}
+#eggbtn.show{display:flex;animation:eggIn .5s ease both, eggShake .9s ease-in-out .5s infinite;}
+#eggbtn.burst{animation:eggBurst .45s ease forwards;}
+#eggbtn .puff{position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;
+  background:#f3b95e;opacity:0;animation:puffOut .5s ease forwards;}
+@keyframes eggShake{0%,100%{transform:translateX(0) rotate(0)}20%{transform:translateX(-3px) rotate(-8deg)}40%{transform:translateX(3px) rotate(8deg)}60%{transform:translateX(-2px) rotate(-5deg)}80%{transform:translateX(2px) rotate(5deg)}}
+@keyframes eggIn{from{opacity:0;transform:translateY(14px) scale(.6)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes eggBurst{0%{transform:scale(1);opacity:1}60%{transform:scale(1.5);opacity:1}100%{transform:scale(.2);opacity:0}}
+@keyframes puffOut{to{transform:translate(var(--dx),var(--dy)) scale(.3);opacity:0}}
+.help-body .help-lead{font-size:14px;line-height:1.75;color:var(--sub);margin:2px 0 12px;}
+.help-body .help-sub{font-size:13px;font-weight:700;color:#b8860b;margin:14px 0 4px;}
+.help-body .help-grp{font-size:16px;font-weight:800;color:#a35c00;margin:20px 0 4px;padding-left:10px;border-left:4px solid #c8881f;}
+.help-body .help-grp-lead{font-size:13px;line-height:1.65;color:var(--sub);margin:0 0 10px;}
+.help-body .help-card{margin:10px 0;padding:12px;border:1px solid #efe6d2;border-radius:14px;background:#faf7f0;}
+.help-body .help-card-t{font-size:15px;font-weight:800;color:var(--ink);margin:0 0 4px;}
+.help-body .help-d{font-size:13px;line-height:1.65;color:#5a5044;margin:0 0 8px;}
+.help-body .help-svg{margin:6px 0 2px;background:#fff;border-radius:10px;padding:6px;}
+.help-body .help-svg svg{width:100%;height:auto;display:block;}
+.help-body .help-foot{margin-top:18px;padding:10px 12px;border:1px dashed #d9cdb4;border-radius:10px;font-size:12px;color:var(--sub);line-height:1.6;}
+</style>
+</head>
+<body data-page-node-id="RSHIuXsjaXbxKZP49c5TYh">
+<div id="splash" onclick="hideSplash()">
+  <div class="sp-deco" id="spDeco" aria-hidden="true"></div>
+  <button class="sp-skip" onclick="event.stopPropagation();hideSplash()">跳过 ›</button>
+  <div class="sp-glow"></div>
+  <div class="sp-count-wrap" id="sp-cw">
+    <div class="sp-count" id="sp-count">--</div>
+  </div>
+  <div class="sp-reco" id="sp-reco">
+    <div class="sp-day" id="sp-day"></div>
+    <div class="sp-line" id="sp-line"></div>
+    <div class="sp-wx" id="sp-wx"></div>
+  </div>
+  <div class="sp-tip" id="sp-tip"></div>
+  <button class="sp-enter" onclick="event.stopPropagation();hideSplash()">进入路书 ›</button>
+</div>
+<script>
+(function(){
+  var SPLASH_MS = 2600;
+  var SPLASH_MOTIFS = [
+    {cls:'m-osmanthus', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g stroke="#6b4a2a" stroke-width="2" fill="none" opacity="0.5"><path d="M300 30 q30 40 -10 90"/><path d="M300 60 q-20 30 -50 50"/></g><g fill="#E8B53A"><circle cx="296" cy="34" r="5"/><circle cx="306" cy="42" r="5"/><circle cx="290" cy="46" r="4"/><circle cx="252" cy="96" r="5"/><circle cx="262" cy="104" r="4"/><circle cx="60" cy="540" r="5"/><circle cx="72" cy="548" r="4"/><circle cx="52" cy="552" r="4"/><circle cx="40" cy="120" r="4"/><circle cx="320" cy="300" r="4"/></g></svg>'},
+    {cls:'m-green', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><polygon points="0,640 0,470 90,400 170,460 250,380 340,450 360,420 360,640" fill="#2E7D6B" opacity="0.85"/><polygon points="0,640 0,540 80,490 160,540 240,470 320,530 360,500 360,640" fill="#1E6B5A" opacity="0.95"/><polygon points="0,640 0,590 100,560 200,595 300,555 360,585 360,640" fill="#134B40"/></svg>'},
+    {cls:'m-tiedye', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g fill="#ffffff" opacity="0.85"><circle cx="40" cy="80" r="3"/><circle cx="80" cy="140" r="2"/><circle cx="300" cy="60" r="3"/><circle cx="330" cy="160" r="2.5"/><circle cx="60" cy="300" r="2"/><circle cx="320" cy="320" r="3"/><circle cx="30" cy="420" r="2.5"/><circle cx="300" cy="470" r="2"/><circle cx="120" cy="560" r="3"/><circle cx="240" cy="590" r="2"/><circle cx="180" cy="40" r="2"/></g><g stroke="#cfe0ff" stroke-width="1.5" fill="none" opacity="0.4"><circle cx="300" cy="90" r="14"/><circle cx="300" cy="90" r="24"/><circle cx="55" cy="470" r="12"/><circle cx="55" cy="470" r="22"/></g></svg>'
+},
+  {cls:'m-route', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><path d="M-10 120 Q90 60 180 100 T380 80" fill="none" stroke="#E9C9A0" stroke-width="16" stroke-linecap="round" opacity="0.9"/><path d="M-10 120 Q90 60 180 100 T380 80" fill="none" stroke="#E08A3C" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round"/><g transform="translate(40,30)"><rect x="0" y="0" width="2.5" height="30" fill="#BA7517"/><path d="M2.5 0 L24 7 L2.5 14 Z" fill="#D85A30"/></g><g transform="translate(280,40)"><rect x="0" y="0" width="2.5" height="26" fill="#BA7517"/><path d="M2.5 0 L22 6 L2.5 12 Z" fill="#639922"/></g><path d="M0 560 Q90 520 180 560 T360 560 L360 640 L0 640 Z" fill="#E0C49A"/><g transform="translate(150,520)"><rect x="0" y="0" width="50" height="24" rx="9" fill="#D85A30"/><rect x="7" y="-13" width="28" height="15" rx="7" fill="#EFA98C"/><circle cx="12" cy="28" r="7" fill="#444441"/><circle cx="38" cy="28" r="7" fill="#444441"/></g></svg>'},
+  {cls:'m-camp', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><circle cx="300" cy="70" r="28" fill="#F4E4B8"/><circle cx="314" cy="62" r="23" fill="#1F3A5F"/><g fill="#FBF3E7"><circle cx="40" cy="60" r="2.6"/><circle cx="100" cy="40" r="2"/><circle cx="170" cy="80" r="2.6"/><circle cx="230" cy="50" r="2"/><circle cx="70" cy="150" r="2"/><circle cx="140" cy="130" r="2.6"/><circle cx="280" cy="150" r="2"/><circle cx="50" cy="220" r="2"/><circle cx="200" cy="190" r="2"/></g><g transform="translate(70,470)"><path d="M0 90 L55 0 L110 90 Z" fill="#3B6D11"/><path d="M40 90 L55 30 L70 90 Z" fill="#1F3A5F"/><rect x="48" y="66" width="14" height="24" fill="#854F0B"/></g><g transform="translate(220,510)"><path d="M0 44 Q15 0 30 44 Z" fill="#E08A3C"/><path d="M7 44 Q15 14 23 44 Z" fill="#FAC775"/><circle cx="15" cy="52" r="5" fill="#BA7517"/></g></svg>'},
+  {cls:'m-sky', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><circle cx="300" cy="64" r="26" fill="#FAC775"/><g stroke="#EF9F27" stroke-width="3" stroke-linecap="round"><line x1="300" y1="22" x2="300" y2="8"/><line x1="342" y1="64" x2="356" y2="64"/><line x1="330" y1="34" x2="340" y2="24"/><line x1="330" y1="94" x2="340" y2="104"/></g><g transform="translate(50,90)"><path d="M0 54 A26 26 0 0 1 52 54 Z" fill="#D85A30"/><path d="M18 54 A9 26 0 0 1 34 54 Z" fill="#EFA98C"/><rect x="20" y="66" width="12" height="14" rx="2" fill="#854F0B"/></g><g transform="translate(220,140)"><path d="M0 40 A20 20 0 0 1 40 40 Z" fill="#185FA5"/><rect x="14" y="50" width="12" height="12" rx="2" fill="#854F0B"/></g><g transform="translate(30,200)" fill="#FFFFFF"><ellipse cx="22" cy="22" rx="28" ry="15"/><ellipse cx="46" cy="16" rx="19" ry="13"/><ellipse cx="4" cy="16" rx="15" ry="11"/></g><g transform="translate(210,250)" fill="#FFFFFF"><ellipse cx="20" cy="18" rx="24" ry="13"/><ellipse cx="40" cy="12" rx="15" ry="10"/></g></svg>'}
+  ];
+  function applySplashMotif(){
+    var m = SPLASH_MOTIFS[Math.floor(Math.random()*SPLASH_MOTIFS.length)];
+    var s = document.getElementById('splash');
+    if(!s) return;
+    s.classList.remove('m-osmanthus','m-green','m-tiedye');
+    s.classList.add(m.cls);
+    var d = document.getElementById('spDeco');
+    if(d) d.innerHTML = m.deco;
+  }
+  // 每日一句话推荐（亲人提醒口吻·具体·带惦记；夫妻未参与的日期只对着祖辈/娃说，避开「咱们/夫妻」）
+  var RECOS = {
+    1:"到了玉林，先歇一晚，别硬撑", 2:"路上累了就歇，服务区随便停",
+    3:"早起去坐竹排，雾里好看", 4:"德天上午人少，玩够再走",
+    5:"鹅泉看状态，累了就不去", 6:"今晚昆明聚齐，好好吃一顿",
+    7:"睡饱了再走大理，不急", 8:"中秋夜记得看洱海月亮",
+    9:"顺路逛逛，乏了就少一站", 10:"白沙玉湖慢慢逛，别赶",
+    11:"看金山记得慢走，氧气带好", 12:"楚雄菌子火锅，记得尝尝鲜",
+    13:"东风韵周三人少，慢慢晃", 14:"今天啥也不排，泡个温泉",
+    15:"路长，中途多歇，别硬开", 16:"百色慢慢回，观光车省力",
+    17:"最后一天错峰回，平安到家"
+  };
+  var RECO_LOC = {
+    1:"玉林",2:"明仕",3:"明仕竹排",4:"德天·靖西",5:"靖西·富宁",
+    6:"昆明·汇合",7:"昆明·大理",8:"大理·中秋",9:"大理·丽江",10:"丽江·白沙",
+    11:"玉龙雪山",12:"楚雄",13:"弥勒·东风韵",14:"弥勒",15:"弥勒·百色",
+    16:"百色·玉林",17:"玉林·东莞"
+  };
+  function hideSplash(){
+    var s = document.getElementById('splash');
+    if(!s || s.classList.contains('hide')) return;
+    s.classList.add('hide');
+    setTimeout(function(){ if(s && s.parentNode) s.parentNode.removeChild(s); }, 650);
+  }
+  function initSplash(){
+    var start = new Date(2026,8,18);   // 出发 2026-09-18
+    var end   = new Date(2026,9,4);    // 返程到家 2026-10-04
+    var t = new Date(); t.setHours(0,0,0,0);
+    var s = document.getElementById('splash');
+    if(!s) return;
+    applySplashMotif();
+    // 从外部网页（高德/地图等）返回行程页：直达内容，不重播启动图
+    try {
+      if (sessionStorage.getItem('rb_from_ext') || /amap|ditu|open-meteo/i.test(document.referrer||'')) {
+        hideSplash(); try { sessionStorage.removeItem('rb_from_ext'); } catch(_){}
+        return;
+      }
+    } catch(e){}
+    if(t >= start && t <= end){
+      // 旅途中：每天首次展示「当天一句话推荐」（夫妻未参与日只对着祖辈/娃说）
+      var dd = Math.floor((t - start)/86400000) + 1;
+      if(dd < 1) dd = 1; if(dd > 17) dd = 17;
+      var key = 'rb_splash_' + t.getTime();
+      try { if(localStorage.getItem(key)){ if(s.parentNode) s.parentNode.removeChild(s); return; } } catch(e){}
+      showReco(dd);
+      try { localStorage.setItem(key, '1'); } catch(e){}
+      setTimeout(hideSplash, Math.max(SPLASH_MS, 3400));
+      return;
+    }
+    var c = document.getElementById('sp-count');
+    var tip = document.getElementById('sp-tip');
+    if(t < start){
+      var todayN = Math.ceil((start - t)/86400000);
+      tip.style.display = 'none';
+      smoothTo(c, todayN + 1, todayN);   // 从「上一天」平缓变到「今天」
+    } else {
+      c.innerHTML = '❤️';
+      tip.textContent = '已平安回家';
+    }
+    setTimeout(hideSplash, SPLASH_MS);
+  }
+  // 启动图天气 chip：气候均值占位（与全页天气逻辑一致，临近出行由 upgradeWeather 切实时）
+  var WX_SPLASH = {1:'29°C',2:'30°C',3:'30°C',4:'31°C',5:'29°C',6:'20°C',7:'19°C',8:'18°C',9:'17°C',10:'16°C',11:'14°C',12:'21°C',13:'24°C',14:'25°C',15:'27°C',16:'29°C',17:'31°C'};
+  function showReco(dd){
+    var cw = document.getElementById('sp-cw');
+    var reco = document.getElementById('sp-reco');
+    if(cw) cw.style.display = 'none';
+    if(reco){
+      reco.classList.add('show');
+      document.getElementById('sp-day').textContent = '第 ' + dd + ' 天 · ' + (RECO_LOC[dd] || '');
+      document.getElementById('sp-line').textContent = '“' + (RECOS[dd] || '') + '”';
+      var wx = document.getElementById('sp-wx');
+      if(wx) wx.textContent = (RECO_LOC[dd] || '') + ' ' + (WX_SPLASH[dd] || '');
+    }
+    var tip = document.getElementById('sp-tip'); if(tip) tip.textContent = '';
+  }
+  function smoothTo(el, from, to, prefix, suffix){
+    var dur = 1800, t0 = null;
+    function easeInOut(x){ return x < .5 ? 2*x*x : 1 - Math.pow(-2*x+2,2)/2; }
+    function frame(ts){
+      if(t0 === null) t0 = ts;
+      var p = Math.min((ts - t0)/dur, 1);
+      var val = Math.round(from + (to - from) * easeInOut(p));
+      el.innerHTML = '<div class="sp-pre">距离出发还有</div>'
+                   + '<div class="sp-numwrap"><span class="sp-num">' + val + '</span>'
+                   + '<span class="sp-unit">天</span></div>';
+      if(p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSplash);
+  else initSplash();
+  window.hideSplash = hideSplash;
+})();
+</script>
+<header data-page-node-id="FJ9B5jtjMWfBQ4DPo96zmX">
+  <div class="hrow">
+    <div class="htitle" data-page-node-id="bpkl8pze2E2Y0KsyCEJANG">中秋+国庆游 9.18-10.4<span class="ht-region" id="htRegion">(定位中…)</span></div>
+  </div>
+  <div class="kbbar" id="kbbar" onclick="openTrivia(kbBarIdx)" aria-label="冷知识，点开翻看">
+    <div class="kb-row">
+      <span class="kb-ico">💡</span>
+      <div class="kb-track"><span class="kb-text" id="kbText"></span></div>
+      <span class="kb-go">翻看 ›</span>
+    </div>
+  </div>
+  <div class="bar" id="bar" data-page-node-id="psZjjOBP6Pmwa7xxjGHWm4"></div>
+</header>
+<main id="main" data-page-node-id="TRGmXGXvHVYPIEgDwrM2aT"></main>
+<footer data-page-node-id="dda0XtpM9BL4y8LZQlsRJb">由《中秋亲子自驾路书 · 17天版》派生 ｜ 主路书改了重新生成 ｜ 地址/房价以实际预订为准</footer>
+<button class="topbtn" id="memobtn" onclick="openMemo()" aria-label="出行备忘清单">备忘</button>
+<button class="topbtn" id="helpbtn" onclick="openHelp()" aria-label="路书怎么用说明">说明</button>
+<button id="eggbtn" onclick="eggClick()" aria-label="彩蛋：查看冷知识">彩蛋</button>
+
+
+<!-- 底部当日动线（常驻简略版，点开半窗看完整动线并可切换日期） -->
+<div class="rtbar" id="rtbar" onclick="openRoute()" aria-label="当日动线，点开查看完整动线">
+  <div class="rtbar-in">
+    <div class="rtgrab"></div>
+    <div class="rtrow">
+      <span class="rtmore">展开 ▴</span>
+      <div class="rtmini" id="rtMini"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 当日动线半窗（复用备忘 sheet 结构） -->
+<div class="memoov" id="rtov" onclick="closeRoute()">
+  <div class="memo-sheet" onclick="event.stopPropagation()">
+    <div class="memo-grip"></div>
+    <div class="memo-hd">
+      <div class="memo-t">当日动线</div>
+      <div class="memo-acts"><button class="memo-x" onclick="closeRoute()">关闭</button></div>
+    </div>
+    <div class="rtchips" id="rtChips"></div>
+    <div class="memo-body" id="rtBody"></div>
+    <div class="memo-foot"><button class="memo-fbtn" onclick="closeRoute()">收起当日动线</button></div>
+  </div>
+</div>
+
+
+<!-- 冷知识翻阅视图（全屏） -->
+<div class="kbov" id="kbov">
+  <div class="kb-deco" id="kbDeco" aria-hidden="true"></div>
+  <div class="kb-hd">
+    <div class="t">📖 旅途小锦囊</div>
+    <div class="r"><span class="kb-cnt" id="kbCnt">1 / 17</span></div>
+  </div>
+  <div class="kb-body" id="kbBody">
+    <div class="kb-deck" id="kbDeck">
+      <div class="kb-back kb-back3" aria-hidden="true"></div>
+      <div class="kb-back kb-back1" onclick="kbStep(-1)"></div>
+      <div class="kb-back kb-back2" onclick="kbStep(1)"></div>
+      <div class="kb-card">
+        <div class="kb-d" id="kbD"></div>
+        <div class="kb-main" id="kbMain"></div>
+        <div class="kb-more" id="kbMore"></div>
+        <button class="kb-rand" onclick="kbRand()">🎲 随机一条</button>
+      </div>
+    </div>
+  </div>
+  <div class="kb-foot">
+    <div class="kb-dots" id="kbDots"></div>
+    <button class="kb-x2" onclick="closeTrivia()">✕ 关闭</button>
+  </div>
+</div>
+
+<script>
+const DAYS = [
+{d:"D1",date:"2026-09-18",week:"周五",route:"东莞→玉林",km:"440km",team:"先行3人",
+ go:"深岑高速（G2518）全程高速，午后服务区休息，约15:00抵玉林",
+ play:[{name:"十字街/九曲巷骑楼老街",nav:"玉林十字街",addr:"内环南路74号"}],
+ stay:{name:"玉林格林豪泰（步行街金城中心店）",nav:"玉林格林豪泰（步行街金城中心店）",addr:"内环西路55号",tel:"0775-2551998",note:"已订 · 老街旁，晚间步行可达十字街",feature:"老街旁·步行可达十字街"},
+ eat:[{name:"曾二十四牛腩粉(城站路店)",rating:"4.1",cuisine:"小吃快餐",price:"¥17/人",addr:"城站路2号",dishes:["牛腩牛巴粉","牛腩粉","牛巴"],nav:"曾二十四牛腩粉(城站路店)",link:"https://m.dianping.com/shopinfo/FTWQEDJWyYLdfhAJ?msource=Appshare2021&utm_source=shop_share&shoptype=10&shopcategoryid=112&cityid=232&isoversea=0",note:"走路到店，不开车"},{name:"十字街/九曲巷",items:"牛巴粉、牛腩粉、酸嘢",nav:"玉林十字街"}],
+ warn:"错峰首发日，路况好；次日仍有416km驾驶，老街别逛太晚"},
+
+{d:"D2",date:"2026-09-19",week:"周六",route:"玉林→明仕田园",km:"416km",team:"先行3人",
+ go:"深南高速（G0412）直达，约16:00抵明仕",
+ play:[{name:"明仕田园",nav:"明仕田园",addr:"532县道"}],
+ stay:{name:"大新溯禾·明仕画廊民宿",nav:"大新溯禾·明仕画廊民宿",addr:"堪圩乡明仕村茶二屯20号",tel:"19158566688",note:"已订 · 连住2晚不搬行李",feature:"明仕河景·画廊主题民宿"},
+ eat:[{name:"拾味餐厅(明仕田园店)",rating:"4.0",cuisine:"广西菜",price:"¥72/人",addr:"堪圩乡明仕田园度假区弄斗屯48号",dishes:["百香果排骨","椒盐明仕河虾","鸡皮果啫鸡"],nav:"拾味餐厅(明仕田园店)",link:"https://m.dianping.com/shopinfo/G9z7coJsvERfCWHp?msource=Appshare2021&utm_source=shop_share&shoptype=10&shopcategoryid=1387&cityid=1571&isoversea=0"}],
+ warn:"抵达正值田园日落，别错过；连住2晚不搬行李"},
+
+{d:"D3",date:"2026-09-20",week:"周日",route:"明仕田园全天",km:"0km",team:"先行3人",
+ go:"民宿→游客中心停车场（免费·有充电桩）→景区摆渡车→竹排上船码头",
+ play:[{name:"明仕河竹排「鱼鳞坝线」",nav:"明仕田园",addr:"竹排上船码头→明仕河→鱼鳞坝→田园综合体→壮族民居博物园"},
+       {name:"明仕田园游客中心",nav:"明仕田园游客中心",addr:"堪圩乡明仕村"}],
+ stay:{name:"大新溯禾·明仕画廊民宿",nav:"大新溯禾·明仕画廊民宿",addr:"堪圩乡明仕村茶二屯20号",tel:"19158566688",note:"连住第2晚",feature:"明仕河景·画廊主题民宿"},
+ eat:[{name:"拾味餐厅(明仕田园店)",rating:"4.0",cuisine:"广西菜",price:"¥72/人",addr:"堪圩乡明仕田园度假区弄斗屯48号",dishes:["百香果排骨","椒盐明仕河虾","鸡皮果啫鸡"],nav:"拾味餐厅(明仕田园店)",link:"https://m.dianping.com/shopinfo/G9z7coJsvERfCWHp?msource=Appshare2021&utm_source=shop_share&shoptype=10&shopcategoryid=1387&cityid=1571&isoversea=0"}],
+ warn:"清晨晨雾/傍晚日落双出片；全票125·老人半票62.5·小宝1.2m以下免；3岁小宝穿救生衣、全程抱稳；拒村民私筏，导航设「明仕田园游客中心」"},
+
+{d:"D4",date:"2026-09-21",week:"周一",route:"明仕→德天→靖西",km:"40+150km",team:"先行3人",
+ go:"⚠️ 7:30出发（40km），8:00第一批入园玩3–4h；午饭后德天→靖西 150km/2.5h",
+ play:[{name:"德天跨国瀑布",nav:"德天跨国瀑布",addr:"硕龙镇德天跨国瀑布游客集散中心"}],
+ stay:{name:"靖西柏曼酒店（锦绣古镇店）",nav:"靖西柏曼酒店（锦绣古镇店）",addr:"绣球大道1133号",tel:"0776-6228889",note:"已订",feature:"锦绣古镇内·新中式"},
+ eat:[{name:"硕龙镇",items:"越南风味小吃、边境家常菜",nav:"硕龙镇"}],
+ warn:"早场光线好、人少、上游放水量大；平路无陡坡；边境带身份证、禁无人机；需提前1天「中旅趣边关」实名预约"},
+
+{d:"D5",date:"2026-09-22",week:"周二",route:"靖西鹅泉→富宁",km:"20+260km",team:"先行3人",
+ go:"上午鹅泉（往返20km玩2h，顺路）→午饭后靖西→富宁 260km/3.3h，傍晚抵达",
+ play:[{name:"鹅泉",nav:"靖西鹅泉",addr:"新靖镇鹅泉村念安屯西城东路902号"}],
+ stay:{name:"富宁龙悦酒店",nav:"富宁龙悦酒店",addr:"迎宾路65号",tel:"0876-3027088",note:"已订 · 普厅河畔中转夜",feature:"普厅河畔中转夜"},
+ eat:[{name:"富宁当地晚餐",items:"家常菜"}],
+ warn:"鹅泉为顺路机动项，体力差可跳过；清晨/傍晚人少出片；门票成人46·老人35·小宝免"},
+
+{d:"D6",date:"2026-09-23",week:"周三",route:"富宁→昆明＋后行抵昆",km:"440km",team:"全员6人",
+ go:"早8点出发（G80高速），服务区分段休息，约15:30抵昆；后行梯队 KY8278 早班机约中午抵昆",
+ play:[{name:"昆明老街",nav:"昆明南强街巷",addr:"南强街88号附10号"},
+       {name:"南强夜市",nav:"昆明南强街巷",addr:"南强街88号附10号"}],
+ stay:{name:"昆明栩云里（老街南屏步行街店）",nav:"昆明栩云里（老街南屏步行街店）",addr:"劝学巷11号阳光A版F3层",tel:"0871-63311828",note:"已订 · 两间 · 住1晚",feature:"南屏步行街·两间"},
+ eat:[{name:"芸南道·过桥米线(昆明老街旗舰店)",rating:"4.7",cuisine:"云南菜｜滇菜",price:"¥50/人",addr:"老街钱王街一楼68号",dishes:["过桥米线"],nav:"芸南道·过桥米线(昆明老街旗舰店)",link:"https://m.dianping.com/shopinfo/G4yCBOSA7NjaliBy?msource=Appshare2021&utm_source=shop_share&shoptype=10&shopcategoryid=248&cityid=267&isoversea=0",note:"米线店就在栩云里楼下，错峰午饭不用等"},     {name:"嘉华鲜花饼·现烤·云南伴手礼(昆明老街店)",rating:"4.7",cuisine:"面包蛋糕｜云南伴手礼",price:"¥29/人",addr:"景星街11-13号",dishes:["现烤玫瑰鲜花饼","云腿鲜花饼","鲜花饼礼盒"],nav:"嘉华鲜花饼·现烤·云南伴手礼(昆明老街店)",link:"https://m.dianping.com/shopinfo/H368uIrS3ihDTI69?msource=Appshare2021&utm_source=shop_share&shoptype=10&shopcategoryid=34245&cityid=267&isoversea=0",note:"正对冠生园景星街店，可一次买齐鲜花饼+云腿月饼；现烤偏油甜，老人适量"}],
+ warn:"18:30 老街集合 → 19:00 南强夜市晚饭 → 20:30 回酒店；汇合日吃好睡好，21:00前休息"},
+
+{d:"D7",date:"2026-09-24",week:"周四",route:"弹性留白→午后赴大理",km:"340km",team:"全员6人",
+ go:"上午弹性留白（睡到自然醒、楼下老街午饭）；午饭后 11:00–12:30 弹性出发（G56/G5611）→约15:30–17:00抵大理",
+ play:[{name:"大观公园（可选）",nav:"昆明大观公园",addr:"大观路284号"},
+       {name:"大理古城南门漫步",nav:"大理古城南门",addr:"4路;古城C2路;大理旅游公交快线"}],
+ stay:{name:"大理雲初客栈（古城南门店）",nav:"大理雲初客栈（古城南门店）",addr:"一塔路云端南舍旁边",tel:"19869026989",note:"已订 · 两间2晚 · 连住",feature:"古城南门·步行入城"},
+ eat:[{name:"古城晚餐",items:"白族家常菜"},{name:"🍄 菌朵朵·庭院野生菌火锅(大理古城南门店)",cuisine:"野生菌火锅",rating:"4.7",price:"¥71/人",dishes:["土鸡/筒骨火腿菌汤锅","涮烤一体·野生菌+石板烤肉","野生菌炒饭"],nav:"大理古城南门",link:"#",note:"D7全家晚餐·古城南门文献路89号白族庭院·带老人小孩实测好评·服务员计时煮菌(约20min)·吃菌不饮酒"}],
+ warn:"大观公园状态好才去（免费1h，出城方向不绕路）；古城南门看不到海，看海需打车去才村/龙龛码头"},
+
+{d:"D8",date:"2026-09-25",week:"周五",route:"大理全天（中秋）",km:"0km",team:"全员6人",
+ go:"全天大理：上午才村码头骑行 → 下午古城慢逛 → 傍晚龙龛码头看月 → 晚团圆饭",
+ play:[{name:"才村/龙龛码头（洱海月升）",nav:"大理龙龛码头",addr:"环海西路270号"},
+       {name:"大理古城慢逛",nav:"大理古城",addr:"护国路172号"}],
+ stay:{name:"大理雲初客栈（古城南门店）",nav:"大理雲初客栈（古城南门店）",addr:"一塔路云端南舍旁边",tel:"19869026989",note:"连住第2晚",feature:"古城南门·步行入城"},
+ eat:[{name:"白族中秋团圆饭",items:"白族团圆饭·中秋家宴"},{name:"☕ 心邸咖啡（才村·洱海景）",cuisine:"咖啡厅",dishes:["海景露台","手冲/特调","蛋糕甜点"],nav:"才村码头",link:"#",note:"D8上午骑行后海景咖啡·270°看洱海·室内不晒"},{name:"☕ 风臻咖啡（才村海景店）",cuisine:"咖啡厅",dishes:["才村海景","手冲/特调"],nav:"才村码头",link:"#",note:"D8上午备选海景咖啡·4.5分才村海景·室内不晒"},{name:"☕ 恬舍海景咖啡厅（龙龛码头店）",cuisine:"咖啡厅",dishes:["龙龛海景","咖啡+轻食"],nav:"大理龙龛码头",link:"#",note:"备选海景咖啡·龙龛码头4.3分·看苍山洱海"}],
+ warn:"🎑 全行程最重要的团圆节点：19:00 洱海日落 → 19:30 中秋月升，打车约15–20元/趟；带零食水果，孩子看日落时吃"},
+
+{d:"D9",date:"2026-09-26",week:"周六",route:"大理西岸精华→午后赴丽江",km:"220km",team:"全员6人",
+ go:"8:30出发 → 磻溪S弯（拍40分钟）→ 喜洲古镇（1h）→ 喜洲午饭 → 13:30上大丽高速 → 约16:00抵丽江",
+ play:[{name:"磻溪S弯",nav:"大理磻溪S湾",addr:"磻溪完全小学北侧90米"},
+       {name:"喜洲古镇",nav:"喜洲古镇",addr:"清真路130号"},
+       {name:"大研古城夜景",nav:"丽江大研古城",addr:"民主路与福慧路交叉口东南"}],
+ stay:{name:"丽江三里田度假美宿（古城木府店）",nav:"丽江三里田度假美宿（古城木府店）",addr:"光义街光碧巷59号",tel:"19908888605",note:"已订套房 · 木府旁158m",feature:"木府旁158m·套房"},
+ eat:[{name:"☕ 放啡咖啡馆（喜洲·一线麦田）",cuisine:"咖啡厅",rating:"4.4",price:"¥43/人",dishes:["一线麦田正对稻田+小火车","玫瑰拿铁/大理酸美式","提拉米苏/司康"],nav:"喜洲古镇",link:"#",note:"D9上午稻田咖啡首选·独栋白楼正对麦田与《去有风的地方》网红树·室内不晒·免费车位+包厢·老少宜"},{name:"☕ 洲咖啡（喜洲·稻田）",cuisine:"咖啡厅",dishes:["半露天稻田景观","手冲/特调"],nav:"喜洲古镇",link:"#",note:"D9上午稻田咖啡·喜洲稻田独一份·半露天直面麦浪"},{name:"☕ 麦田咖啡（喜洲·稻田平替）",cuisine:"咖啡厅",dishes:["直面稻田","咖啡+饮品"],nav:"喜洲古镇",link:"#",note:"备选稻田咖啡·价格亲民·与洲咖啡隔小路对望"},{name:"☕ 云喃喃·稻田茶馆（喜洲）",cuisine:"咖啡厅",dishes:["二楼露台稻田+苍山","云南小粒咖啡","改良云南菜"],nav:"喜洲古镇",link:"#",note:"备选稻田咖啡·二楼露台看稻浪·可简餐"},{name:"山丘花园·云南创意料理(麦田小火车店)",rating:"4.6",cuisine:"云南创意料理",price:"¥79/人",addr:"大丽线喜洲古镇（网红转角楼南侧旁）",dishes:["汽锅鸡","野果酸汤鱼","铁板菌菇虾仁"],nav:"山丘花园·云南创意料理(麦田小火车店)",link:"https://m.dianping.com/shopinfo/l6ORqGJqGOG3dzPN?msource=Appshare2021&utm_source=shop_share&shoptype=10&shopcategoryid=248&cityid=3627&isoversea=0",note:"D9午餐主选·拍完稻田步行即到·二楼观景位看稻浪·老人小孩不晒"},     {name:"春宗棠·云南菜·稻田餐厅(喜洲稻田店)",rating:"4.6",cuisine:"云南菜｜滇菜",price:"¥79/人",addr:"喜洲古镇（镇东路与镇南路交叉口正北370米）",dishes:["油炝黄喉","洋芋油焖鸡","茉莉花炒蛋"],nav:"春宗棠·云南菜·稻田餐厅(喜洲稻田店)",link:"https://m.dianping.com/shopinfo/G5P8DE70okYMsNq1?msource=Appshare2021&utm_source=shop_share&shoptype=10&shopcategoryid=248&cityid=3627&isoversea=0",note:"备选·山丘满座时备用·有宝宝椅·部分菜偏辣需控辣"}],
+ warn:"晚上轻量逛大研古城（大水车+忠义市场夜市），别逛太晚——次日白沙+玉湖自然日"},
+
+{d:"D10",date:"2026-09-27",week:"周日",route:"白沙+玉湖自然日",km:"约60km",team:"全员6人",
+ go:"上午9:00退房搬束河（10分钟车程）→ 轻装北上：束河→白沙约15–20min → 玉湖再北15min → 下午原路回",
+ play:[{name:"白沙古镇",nav:"丽江白沙古镇",addr:"白沙镇"},
+       {name:"玉湖村·龙女湖",nav:"丽江玉湖村",addr:"玉湖村玉湖段二号"}],
+ stay:{name:"束河溪田悦上（两卧套房）",nav:"束河溪田悦上",addr:"束河街道开文社区东康七组48号",tel:"15608882345",note:"已订 · 屋顶可看日照金山",feature:"屋顶看玉龙雪山日照金山"},
+ eat:[{name:"束河古镇晚餐",items:"纳西家常菜"}],
+ warn:"白沙壁画/洛克故居按需购票；龙女湖骑马走古道看雪山倒影，平缓适合老人小孩；21:30前回束河休息"},
+
+{d:"D11",date:"2026-09-28",week:"周一",route:"玉龙雪山→后行飞回",km:"60km",team:"全员6人（晚4人续）",
+ go:"6:40束河出发（25–30分钟）→ 甘海子看日照金山（日出约7:00）→ 8:00第一批入园 → 云杉坪+蓝月谷 → 13:00出园",
+ play:[{name:"玉龙雪山云杉坪",nav:"玉龙雪山云杉坪",addr:"15公里处玉龙雪山国家级风景名胜区内(西北角)"},
+       {name:"蓝月谷",nav:"丽江蓝月谷",addr:"雪山景区内"}],
+ stay:{name:"束河溪田悦上（双床房）",nav:"丽江束河溪田悦上",addr:"束河街道开文社区东康七组48号",tel:"15608882345",note:"已订 · 先行+大宝4人",feature:"屋顶看玉龙雪山日照金山"},
+ eat:[{name:"市区午饭",items:"丽江家常菜"}],
+ warn:"⚠️ 全程只去云杉坪+蓝月谷（约3200m），不上大索道顶（4506m）避高反；氧气瓶昆明药店提前买；后行 ZH8984 19:55 丽江直飞深圳，14:30出发去机场"},
+
+{d:"D12",date:"2026-09-29",week:"周二",route:"丽江→楚雄（歇脚拆分）",km:"250km",team:"先行4人",
+ go:"早9点出发（大丽高速→杭瑞高速，顺路不绕），约12:00抵楚雄",
+ play:[{name:"彝人古镇",nav:"楚雄彝人古镇",addr:"永安路与车坪路交叉口北"}],
+ stay:{name:"楚雄予舍美宿（彝人古镇店）",nav:"楚雄予舍美宿（彝人古镇店）",addr:"东瓜镇楚雄开发区永安路北侧彝人古镇D109幢",tel:"18183789618",note:"已订",feature:"彝人古镇内"},
+ eat:[{name:"野生菌火锅",items:"楚雄「云南菌都」，9月底菌季尾巴",nav:"楚雄彝人古镇"},{name:"🍄 楚雄味道·庭院野生菌火锅",cuisine:"野生菌火锅",rating:"4.9",price:"¥45/人",dishes:["庭院式·一大家人闲坐","十余种鲜菌/土鸡锅底","按服务员计时煮熟"],nav:"楚雄味道 庭院野生菌火锅 楚雄",link:"#",note:"D12小分队·彝人古镇旁庭院式·带老人小孩好评多·菌子务必煮熟(约20min)·吃菌不饮酒"}],
+ warn:"菌子务必煮熟（见手青等未熟会中毒）；把长途拆成两段，带娃轻松"},
+
+{d:"D13",date:"2026-09-30",week:"周三",route:"楚雄→弥勒→东风韵",km:"约270km",team:"先行4人",
+ go:"早9点出发（经玉溪，G56→G80）→ 13:30 东风农场午饭 → 14:30 观璟 check-in → 15:00 入园",
+ play:[{name:"弥勒东风韵景区",nav:"弥勒东风韵景区",addr:"葡萄观光大道"}],
+ stay:{name:"弥勒东风韵观璟民宿",nav:"弥勒东风韵观璟民宿",addr:"东风农场街道东风韵景区文创6栋",tel:"0873-6331818",note:"已订 · 含门票+观光车 · 阳台正对万花筒",feature:"阳台正对万花筒·含门票"},
+ eat:[{name:"东风农场周边",items:"农家乐/红酒庄餐厅"}],
+ warn:"周三基本没人·傍晚光影最佳·17:30前皆可入园；避国庆人潮（10.1 不去东风韵景区）"},
+
+{d:"D14",date:"2026-10-01",week:"周四",route:"弥勒·农场+市区温泉",km:"0km",team:"先行4人",
+ go:"睡到自然醒 → 约10点退房（观光车接出景区）→ 摘葡萄 → 云南红酒庄 → 午饭 → 下午市区入住 → 傍晚湖泉散步 → 温泉 → 红河水乡夜景",
+ play:[{name:"云南红酒庄",nav:"弥勒云南红酒庄",addr:"东风农场"},
+       {name:"湖泉生态园",nav:"弥勒湖泉生态园",addr:"温泉路"},
+       {name:"红河水乡夜景",nav:"弥勒红河水乡",addr:"石新汽专"}],
+ stay:{name:"拾月柏雅温泉酒店弥勒",nav:"拾月柏雅温泉酒店弥勒",addr:"弥阳街道湖泉湾1号财富新天地商业步行街1栋",tel:"0873-3179088",note:"已订 · 免费温泉+儿童泳池",feature:"自带温泉+儿童泳池"},
+ eat:[{name:"红酒庄餐厅/市区晚餐",items:"弥勒卤鸡、红酒"}],
+ warn:"全天0km无跨城段，全程最松弛日；红酒庄 ¥18/人含品酒；10月尾季摘葡萄能摘就摘"},
+
+{d:"D15",date:"2026-10-02",week:"周五",route:"弥勒→百色",km:"约450km",team:"先行4人",
+ go:"上午出发（G80→G78，经师宗/百色方向），约15:00抵百色",
+ play:[{name:"澄碧湖",nav:"百色澄碧湖",addr:"右江区"},
+       {name:"解放街/文明街夜市",nav:"百色解放街",addr:"右江区"}],
+ stay:{name:"百色格林东方酒店",nav:"百色格林东方酒店",addr:"百乐园幼儿园东1门旁",tel:"0776-2883755",note:"已订 · 近澄碧湖/火车站",feature:"近澄碧湖/火车站"},
+ eat:[{name:"解放街夜市",items:"田螺鸭脚煲、红糖酸嘢、桂七芒果干、卷筒粉",nav:"百色解放街"}],
+ warn:"⚠️ 约450km为全程最长单日，靠早出发+双司机换驾；中途服务区午餐错峰；全程高速免费"},
+
+{d:"D16",date:"2026-10-03",week:"周六",route:"百色→玉林",km:"420km",team:"先行4人",
+ go:"上午先去百色起义纪念园（约2–3h）→ 午饭后出发（G80经南宁/贵港）→ 约17:00抵玉林",
+ play:[{name:"百色起义纪念园",nav:"百色起义纪念园",addr:"城东大道112号"}],
+ stay:{name:"玉林格林豪泰（云天文化城）",nav:"玉林格林豪泰(一环东路58号)",addr:"一环东路58号",tel:"0775-8080520",note:"已订 · 近夜市/火车站",feature:"近夜市/火车站"},
+ eat:[{name:"玉林夜市",items:"牛巴、云吞、生料粉",nav:"玉林夜市"}],
+ warn:"纪念园免费5A，9:00–17:00刷身份证入（周一闭馆，10.3为周六不闭馆）；老人省力路线，园区观光车 ¥5/次"},
+
+{d:"D17",date:"2026-10-04",week:"周日",route:"玉林→东莞",km:"440km",team:"先行4人",
+ go:"早6点前上高速（G80→广州→东莞），约14:00–15:00抵东莞，赶在珠三角14:00拥堵窗口前",
+ play:[],
+ stay:{name:"🏠 到家（当夜不住）",nav:"",addr:""},
+ eat:[{name:"到家晚餐",items:""}],
+ warn:"⚠️ 10.4仍在高速免费期（10.1–10.7）；唯一堵点在广东段（广深/广州绕城/虎门），靠早出发错峰"}
+];
+
+const ROUTES = {
+"D1":[{t:"08:00",n:"东莞出发 · 深岑高速 G2518",ty:"交通",k:""},
+      {t:"12:30",n:"服务区午餐休整",ty:"餐饮",k:""},
+      {t:"15:00",n:"抵玉林 · 入住格林豪泰",ty:"住宿",k:""},
+      {t:"17:30",n:"十字街 / 九曲巷骑楼老街",ty:"风景 · 老街漫步",k:"key"},
+      {t:"18:30",n:"曾二十四牛腩粉（城站路店）",ty:"餐饮 · 牛腩牛巴粉",k:""}],
+"D2":[{t:"08:00",n:"玉林出发 · 深南高速 G0412",ty:"交通",k:""},
+      {t:"12:30",n:"服务区午餐",ty:"餐饮",k:""},
+      {t:"16:00",n:"抵明仕 · 入住溯禾画廊民宿",ty:"住宿 · 连住2晚",k:""},
+      {t:"17:00",n:"明仕田园日落",ty:"风景 · 抵达即景",k:"key"},
+      {t:"18:30",n:"拾味餐厅（明仕田园店）",ty:"餐饮 · 百香果排骨",k:""}],
+"D3":[{t:"08:30",n:"民宿 → 游客中心停车场",ty:"交通 · 免费有充电桩",k:""},
+      {t:"09:30",n:"明仕河竹排「鱼鳞坝线」",ty:"风景 · 核心",k:"key"},
+      {t:"12:00",n:"田园综合体 / 壮族民居博物园",ty:"风景",k:""},
+      {t:"12:30",n:"拾味餐厅（明仕田园店）",ty:"餐饮",k:""},
+      {t:"18:00",n:"明仕田园日落",ty:"风景 · 傍晚出片",k:"key"}],
+"D4":[{t:"07:30",n:"明仕出发（40km）",ty:"交通",k:""},
+      {t:"08:00",n:"德天跨国瀑布入园",ty:"风景 · 核心（早场人少）",k:"key"},
+      {t:"12:00",n:"硕龙镇午饭",ty:"餐饮 · 越南风味",k:""},
+      {t:"13:30",n:"德天 → 靖西 150km",ty:"交通",k:""},
+      {t:"16:00",n:"抵靖西 · 入住柏曼酒店",ty:"住宿 · 锦绣古镇内",k:""},
+      {t:"18:00",n:"锦绣古镇晚餐",ty:"餐饮",k:""}],
+"D5":[{t:"08:00",n:"靖西 → 鹅泉（20km）",ty:"交通",k:""},
+      {t:"08:30",n:"鹅泉",ty:"风景 · 顺路机动",k:"key"},
+      {t:"12:30",n:"靖西午饭",ty:"餐饮",k:""},
+      {t:"13:30",n:"靖西 → 富宁 260km",ty:"交通",k:""},
+      {t:"17:00",n:"抵富宁 · 入住龙悦酒店",ty:"住宿 · 普厅河畔",k:""},
+      {t:"18:30",n:"富宁当地晚餐",ty:"餐饮 · 家常菜",k:""}],
+"D6":[{t:"08:00",n:"富宁出发 · G80 高速",ty:"交通 · 440km",k:""},
+      {t:"12:00",n:"后行梯队 KY8278 抵昆",ty:"交通 · 早班机",k:""},
+      {t:"15:30",n:"先行抵昆 · 入住栩云里",ty:"住宿 · 两间",k:""},
+      {t:"18:30",n:"昆明老街集合",ty:"风景 · 全员汇合",k:"key"},
+      {t:"19:00",n:"南强夜市晚饭",ty:"餐饮 · 6 人汇合",k:""}],
+"D7":[{t:"上午",n:"弹性留白（睡到自然醒）",ty:"休整",k:""},
+      {t:"11:00",n:"大观公园",ty:"风景 · 可选（出城顺路）",k:"opt"},
+      {t:"12:00",n:"楼下老街午饭",ty:"餐饮",k:""},
+      {t:"12:30",n:"昆明 → 大理 G56/G5611",ty:"交通 · 340km",k:""},
+      {t:"16:00",n:"抵大理 · 入住雲初客栈",ty:"住宿 · 连住2晚",k:""},
+      {t:"18:00",n:"大理古城南门漫步",ty:"风景",k:""},
+      {t:"18:30",n:"菌朵朵·庭院野生菌火锅",ty:"餐饮 · 全家晚餐",k:""}],
+"D8":[{t:"09:00",n:"才村码头骑行",ty:"风景 · 洱海西岸",k:""},
+      {t:"11:00",n:"心邸咖啡（才村·洱海景）",ty:"餐饮 · 海景咖啡",k:"opt"},
+      {t:"14:00",n:"大理古城慢逛",ty:"风景",k:""},
+      {t:"18:30",n:"龙龛码头 · 洱海日落",ty:"风景 · 19:00 日落",k:"key"},
+      {t:"19:30",n:"洱海月升 · 中秋赏月",ty:"风景 · 全行程核心",k:"key"},
+      {t:"20:00",n:"白族中秋团圆饭",ty:"餐饮 · 中秋家宴",k:"key"}],
+"D9":[{t:"08:30",n:"大理出发 → 磻溪S弯",ty:"交通",k:""},
+      {t:"09:00",n:"磻溪 S 弯（拍 40 分钟）",ty:"风景",k:"key"},
+      {t:"10:00",n:"喜洲古镇",ty:"风景",k:""},
+      {t:"11:30",n:"放啡咖啡（喜洲·一线麦田）",ty:"餐饮 · 稻田咖啡",k:""},
+      {t:"12:30",n:"山丘花园·云南创意料理",ty:"餐饮 · 喜洲午饭",k:""},
+      {t:"13:30",n:"上大丽高速 → 丽江",ty:"交通 · 220km",k:""},
+      {t:"16:00",n:"抵丽江 · 入住三里田美宿",ty:"住宿 · 木府旁",k:""},
+      {t:"19:00",n:"大研古城夜景",ty:"风景 · 大水车+忠义市场",k:""}],
+"D10":[{t:"09:00",n:"束河退房 · 行李寄存",ty:"交通",k:""},
+      {t:"09:30",n:"白沙古镇 · 清晨雪山背景",ty:"风景 · 重点观景（人少好拍）",k:"key"},
+      {t:"10:30",n:"玉湖 · 龙女湖草甸",ty:"风景 · 核心自然日（骑马/倒影）",k:"key"},
+      {t:"12:30",n:"玉湖 / 白沙简餐 · 休整",ty:"餐饮",k:""},
+      {t:"15:00",n:"云堤岸咖啡",ty:"可选 · 天气/体力好才去",k:"opt"},
+      {t:"17:00",n:"回束河 · Lan岚团圆晚餐",ty:"餐饮 · 6 人汇合",k:""},
+      {t:"21:00",n:"溪田悦上 · 屋顶看金山",ty:"住宿 · 观景重点",k:"key"}],
+"D11":[{t:"06:40",n:"束河出发（25–30 分钟）",ty:"交通",k:""},
+      {t:"07:00",n:"甘海子 · 日照金山",ty:"风景 · 日出约 7:00",k:"key"},
+      {t:"08:00",n:"玉龙雪山云杉坪入园",ty:"风景 · 第一批",k:"key"},
+      {t:"10:30",n:"蓝月谷",ty:"风景 · 雪山景区内",k:"key"},
+      {t:"13:00",n:"出园 · 市区午饭",ty:"餐饮",k:""},
+      {t:"14:30",n:"后行出发去机场",ty:"交通",k:""},
+      {t:"19:55",n:"后行 ZH8984 丽江直飞深圳",ty:"交通 · 4 人返程",k:""},
+      {t:"21:00",n:"束河溪田悦上（双床房）",ty:"住宿 · 先行+大宝 4 人",k:""}],
+"D12":[{t:"09:00",n:"丽江出发 · 大丽→杭瑞",ty:"交通 · 250km",k:""},
+      {t:"12:00",n:"抵楚雄 · 入住予舍美宿",ty:"住宿 · 彝人古镇内",k:""},
+      {t:"17:00",n:"彝人古镇",ty:"风景",k:""},
+      {t:"18:30",n:"楚雄味道·庭院野生菌火锅",ty:"餐饮 · 菌季尾巴",k:"key"}],
+"D13":[{t:"09:00",n:"楚雄出发 · G56→G80",ty:"交通 · 270km",k:""},
+      {t:"13:30",n:"东风农场午饭",ty:"餐饮 · 农家乐/红酒庄",k:""},
+      {t:"14:30",n:"观璟民宿 check-in",ty:"住宿 · 含门票+观光车",k:""},
+      {t:"15:00",n:"弥勒东风韵景区入园",ty:"风景 · 周三基本没人",k:"key"},
+      {t:"18:30",n:"东风农场周边晚餐",ty:"餐饮",k:""}],
+"D14":[{t:"10:00",n:"退房 · 观光车接出景区",ty:"交通",k:""},
+      {t:"10:30",n:"云南红酒庄",ty:"风景 · 含品酒",k:""},
+      {t:"12:30",n:"红酒庄 / 市区午饭",ty:"餐饮 · 弥勒卤鸡",k:""},
+      {t:"14:00",n:"市区入住拾月柏雅",ty:"住宿 · 免费温泉",k:""},
+      {t:"17:00",n:"湖泉生态园散步",ty:"风景",k:""},
+      {t:"19:00",n:"红河水乡夜景",ty:"风景 · 夜景重点",k:"key"},
+      {t:"20:00",n:"泡温泉 · 儿童泳池",ty:"休整",k:""}],
+"D15":[{t:"08:00",n:"弥勒出发 · G80→G78",ty:"交通 · 约450km（最长单日）",k:""},
+      {t:"12:30",n:"服务区午餐（错峰）",ty:"餐饮",k:""},
+      {t:"15:00",n:"抵百色 · 入住格林东方",ty:"住宿 · 近澄碧湖",k:""},
+      {t:"17:00",n:"澄碧湖",ty:"风景",k:""},
+      {t:"18:30",n:"解放街 / 文明街夜市",ty:"餐饮 · 田螺鸭脚煲",k:"key"}],
+"D16":[{t:"09:00",n:"百色起义纪念园",ty:"风景 · 免费5A（约2–3h）",k:"key"},
+      {t:"12:00",n:"午饭",ty:"餐饮",k:""},
+      {t:"13:00",n:"百色 → 玉林（经南宁/贵港）",ty:"交通 · 420km",k:""},
+      {t:"17:00",n:"抵玉林 · 入住格林豪泰",ty:"住宿 · 近夜市",k:""},
+      {t:"18:30",n:"玉林夜市",ty:"餐饮 · 牛巴/云吞/生料粉",k:""}],
+"D17":[{t:"06:00",n:"玉林出发 · G80→广州→东莞",ty:"交通 · 440km 早出发错峰",k:""},
+      {t:"12:00",n:"服务区午餐",ty:"餐饮",k:""},
+      {t:"15:00",n:"抵东莞 · 到家",ty:"住宿 · 当夜不住",k:"key"},
+      {t:"18:00",n:"到家晚餐",ty:"餐饮",k:""}]
+};
+
+const TRIVIA = {
+  "D1":["玉林牛巴是老贡品，古代要送进皇宫的！","「玉林」这两个字，是古人夸出来的"],
+  "D2":["这山的名字叫「喀斯特」，是雨水悄悄啃了几百万年啃出来的。","这里的山肚子里，藏着看不见的河"],
+  "D3":["石头砌成一片片鱼鳞，水漫过像大鱼在闪光。","竹子不是树，是世界上最高的草"],
+  "D4":["亚洲最大的跨国瀑布！水从广西直接跳到越南。","瀑布边有块「53号界碑」，一站过去就是两国"],
+  "D5":["这股泉是德天瀑布的「妈妈」，清得能数清水底石头。","泉水常年十几度，夏天踩进去冰得跳脚"],
+  "D6":["昆明住在高空上（海拔1900米），所以四季都像春天。","云南有一怪：鲜花是当菜吃的"],
+  "D7":["洱海其实是个大湖，「海」是白族人对大水的爱称。","洱海的形状像一只耳朵，「洱」就是耳朵"],
+  "D8":["大理下关风特别猛，是当地有名的「风花雪月」之一。","月亮自己不会发光，全靠借太阳的光"],
+  "D9":["今天要「爬高」500多米，丽江比大理冷飕飕。","丽江的「江」，说的是金沙江"],
+  "D10":["雪山有13座尖峰，最高5596米，到现在还没人爬上去过！","它叫「玉龙」，是因为连起来像一条银色的龙"],
+  "D11":["傍晚雪山顶会突然变金色，是太阳斜照的反光，要看运气。","日照金山通常只持续十几分钟"],
+  "D12":["云南是全国「菌子大王」，但见手青没煮熟会让人头晕、看东西重影。","菌子是下雨后「结果子」冒出来的"],
+  "D13":["高原也能种葡萄酿酒，云南红酒还拿过世界奖！","万花筒那座红砖建筑，一块钢筋都没用"],
+  "D14":["温泉是地球肚子里冒出来的热水，泡着特别暖。","泡久了手指发皱，不是被水泡胀的"],
+  "D15":["湖是人工造的，水清得不得了，中间还留着一座小岛。","澄碧湖的水，最后会流到我们家门口"],
+  "D16":["广西云南的山长得像「亲戚」，因为都是喀斯特一家。","百色起义那年，邓小平只有25岁"],
+  "D17":["这趟从广西逛到云南再回，开了快2000公里！","2000公里下来，一个轮子转了上百万圈"]
+};
+const TRIVIA_MORE = {
+  "D1":["用黄牛后腿慢火烤成，咸甜耐嚼。","古话讲「岭南美玉，胜景如林」，夸这里山水好得像成片的美玉和树林，地名就这么来的。"],
+  "D2":["石灰岩遇水会溶解，越啃越尖，就成了一座座峰林。","雨水落到石灰岩会渗进石头缝，变成地下暗河；广西的地下暗河是全国最多的，所以山脚常冒泉眼。"],
+  "D3":["一级级石坎拦成小瀑布，俯看真像铺满鳞片的鱼。","竹子是禾本科，跟水稻、小麦是亲戚，一天能长一米，是全世界长得最快的植物；今天坐的竹排就是它做的。"],
+  "D4":["宽200多米，9–10月最猛，对面就是另一个国家。","那是清朝留下的中越界碑，游客排队跟它合影，一脚站中国、一脚站越南，就差几步路。"],
+  "D5":["泉从地下涌出，汇成归春河，最后跌成德天。","地下水不受气温影响，四季都是同一个温度，所以天越热，脚伸进去越觉得冰。"],
+  "D6":["每升高1000米凉约6℃，它站得高。","云南十八怪里真有「鲜花当蔬菜」这一条，玫瑰糖、茉莉花炒蛋、金雀花煎蛋都是家常菜。"],
+  "D7":["白族人靠湖生活，把大湖都叫海。","古人看这湖弯弯的像耳廓，就取名洱海；湖里的水主要靠苍山雪水化成的十八溪一路流进来。"],
+  "D8":["峡谷像风口，风从下关一直灌进来。","中秋最圆，是因为那天地球正好转到太阳和月亮中间，把月亮整个亮面都照给我们看。"],
+  "D9":["海拔越高越冷，丽江高出一截。","金沙江古时候叫「丽水」，古城依着它建起来，就叫丽江了。"],
+  "D10":["纳西族心中的神山。","十三座雪峰连起来像一条银白色的巨龙横卧在天边，纳西人就叫它玉龙雪山。"],
+  "D11":["没云、风向刚好才遇得到。","太阳角度很低时只有最高的雪山顶够得着光，再落一点金光就没了，所以要提前找好位置等。"],
+  "D12":["吃野生菌务必煮透。","平时菌子藏在土里当菌丝，雨一淋才长出「果实」冒出地面，所以雨后几天山上冒得最多。"],
+  "D13":["日照长、温差大，葡萄糖分高。","东风韵的万花筒全靠红砖一块块垒出弧度和穹顶，没用钢筋也没用钢架，砖自己就能站住。"],
+  "D14":["地下岩层把水烧热带上矿物质涌出。","是神经系统让皮下血管收缩、把皮拉出了褶子，跟泡不泡水其实没关系。"],
+  "D15":["蓄水淹了山谷，山头成了湖中央的小岛。","它拦的是右江的一条支流，湖水出去汇进珠江，一路往东流到广东入海。"],
+  "D16":["云贵桂同属喀斯特地貌。","1929年他25岁就领导了百色起义，比很多爸妈现在的年纪还小。"],
+  "D17":["17天串起两省一区。","轮胎转一圈大约走2米，2000公里下来，一个轮子要转上一百万圈左右。"]
+};
+
+// 每日气温：norm 为历史同期均值（参考），临近出行由 upgradeWeather() 拉取实时预报覆盖
+const WX = {
+  "D1":  {region:"玉林",     lat:22.63, lon:110.15, norm:29, icon:"☀️"},
+  "D2":  {region:"明仕",     lat:22.75, lon:107.27, norm:28, icon:"☀️"},
+  "D3":  {region:"明仕",     lat:22.75, lon:107.27, norm:28, icon:"☀️"},
+  "D4":  {region:"靖西",     lat:23.13, lon:106.42, norm:26, icon:"🌤"},
+  "D5":  {region:"富宁",     lat:23.62, lon:105.62, norm:24, icon:"🌤"},
+  "D6":  {region:"昆明",     lat:25.04, lon:102.71, norm:19, icon:"⛅"},
+  "D7":  {region:"大理",     lat:25.61, lon:100.27, norm:18, icon:"⛅"},
+  "D8":  {region:"大理",     lat:25.61, lon:100.27, norm:18, icon:"⛅"},
+  "D9":  {region:"丽江",     lat:26.87, lon:100.23, norm:16, icon:"🌥"},
+  "D10": {region:"丽江",     lat:26.87, lon:100.23, norm:16, icon:"🌥"},
+  "D11": {region:"玉龙雪山", lat:27.10, lon:100.18, norm:14, icon:"❄️"},
+  "D12": {region:"楚雄",     lat:25.04, lon:101.55, norm:19, icon:"⛅"},
+  "D13": {region:"弥勒",     lat:24.41, lon:103.43, norm:22, icon:"🌤"},
+  "D14": {region:"弥勒",     lat:24.41, lon:103.43, norm:22, icon:"🌤"},
+  "D15": {region:"百色",     lat:23.90, lon:106.72, norm:26, icon:"☀️"},
+  "D16": {region:"玉林",     lat:22.63, lon:110.15, norm:28, icon:"☀️"},
+  "D17": {region:"东莞",     lat:23.02, lon:113.75, norm:29, icon:"☀️"}
+};
+
+// 日照金山观测配置（双窗口：9.27 束河屋顶 + 9.28 甘海子）
+const SUNMT = {
+  "D10": { date:"2026-09-27", spot:"束河溪田悦上·屋顶", coord:{lat:26.9191, lon:100.2099},
+    window:"约06:30–07:30（日出≈07:05）", note:"屋顶机位·看完回屋早饭，不影响09:00出发" },
+  "D11": { date:"2026-09-28", spot:"甘海子（06:40出发）", coord:{lat:27.10, lon:100.18},
+    window:"约06:30–07:30", note:"行程已有甘海子站·雪山段慢走备氧气" }
+};
+const SUNMT_PRIOR = 35;   // 单日先验概率（气候统计，9/23 转晴转折点后最佳窗口）
+const SUNMT_CUM   = 58;   // 累计概率 = 1-(1-0.35)² ≈ 58%（双窗口）
+
+const TRIP_START = new Date("2026-09-18");
+const TRIP_END   = new Date("2026-10-04");
+const today = new Date();
+const pad = n => (n<10?"0":"")+n;
+const POI = {
+  "玉林格林豪泰（步行街金城中心店）": {"id":"B0L6XDV191","lng":"110.149445","lat":"22.626816","name":"格林豪泰酒店(玉林步行街金城中心店)","addr":"内环西路55号","thumb":"img/B0L6XDV191.jpg","thumb2":"img/B0L6XDV191_2.jpg"},
+  "玉林十字街": {"id":"B0KGUC2LPF","lng":"110.152145","lat":"22.626531","name":"玉林十字街","addr":"内环南路74号","thumb":"img/B0KGUC2LPF.jpg","thumb2":"img/B0KGUC2LPF_2.jpg"},
+  "曾二十四牛腩粉(城站路店)": {"id":"B0FFFZDGNA","lng":"110.155856","lat":"22.621656","name":"曾二十四牛腩粉(城站路店)","addr":"城站路2号"},
+  "明仕田园": {"id":"B06EB0MRUY","lng":"106.922636","lat":"22.704298","name":"明仕田园风景区","addr":"532县道","thumb":"img/B06EB0MRUY.jpg","thumb2":"img/B06EB0MRUY_2.jpg"},
+  "大新溯禾·明仕画廊民宿": {"id":"B0KG9X0COE","lng":"106.927803","lat":"22.699449","name":"大新溯禾·明仕画廊民宿","addr":"堪圩乡明仕村茶二屯20号","thumb":"img/B0KG9X0COE.jpg","thumb2":"img/B0KG9X0COE_2.jpg"},
+  "明仕田园游客中心": {"id":"B0H67U3WUE","lng":"106.928325","lat":"22.701925","name":"明仕田园风景区游客中心","addr":"堪圩乡明仕村","thumb":"img/B0H67U3WUE.jpg","thumb2":"img/B0H67U3WUE_2.jpg"},
+  "拾味餐厅(明仕田园店)": {"id":"B0H2K7DI60","lng":"106.934295","lat":"22.701925","name":"拾味餐厅(明仕田园店)","addr":"堪圩乡明仕田园度假区弄斗屯48号"},
+  "芸南道·过桥米线(昆明老街旗舰店)": {"id":"B0JKHHBSGD","lng":"102.709167","lat":"25.040033","name":"芸南道·过桥米线(昆明老街旗舰店)","addr":"老街钱王街一楼68号"},
+  "嘉华鲜花饼·现烤·云南伴手礼(昆明老街店)": {"id":"B036711IW9","lng":"102.708819","lat":"25.039683","name":"嘉华鲜花饼·现烤·云南伴手礼(昆明老街店)","addr":"老街光华街18-32号"},
+  "山丘花园·云南创意料理(麦田小火车店)": {"id":"B0LUOSINWR","lng":"100.134682","lat":"25.854237","name":"山丘花园·云南创意料理(麦田小火车店)","addr":"喜洲镇清真路130号"},
+  "春宗棠·云南菜·稻田餐厅(喜洲稻田店)": {"id":"B0K1BUWMD6","lng":"100.135673","lat":"25.852525","name":"春宗棠·云南菜·稻田餐厅(喜洲稻田店)","addr":"喜洲古镇镇东路与镇南路交叉口正北370米"},
+  "德天跨国瀑布": {"id":"B06EB009VO","lng":"106.728430","lat":"22.853146","name":"德天跨国瀑布景区","addr":"硕龙镇德天跨国瀑布游客集散中心","thumb":"img/B06EB009VO.jpg","thumb2":"img/B06EB009VO_2.jpg"},
+  "靖西柏曼酒店（锦绣古镇店）": {"id":"B0K25CQFPX","lng":"106.427036","lat":"23.123837","name":"柏曼酒店(百色靖西锦绣古镇店)","addr":"绣球大道1133号","thumb":"img/B0K25CQFPX.jpg","thumb2":"img/B0K25CQFPX_2.jpg"},
+  "硕龙镇": {"id":"B06EB00DPQ","lng":"106.821384","lat":"22.819786","name":"硕龙镇人民政府","addr":"硕龙镇硕龙街248号","thumb":"img/B06EB00DPQ.jpg"},
+  "靖西鹅泉": {"id":"B0308006PK","lng":"106.389710","lat":"23.098283","name":"鹅泉风景区","addr":"新靖镇鹅泉村念安屯西城东路902号","thumb":"img/B0308006PK.jpg","thumb2":"img/B0308006PK_2.jpg"},
+  "富宁龙悦酒店": {"id":"B0L69O2C77","lng":"105.629472","lat":"23.627749","name":"富宁龙悦酒店","addr":"迎宾路65号","thumb":"img/B0L69O2C77.jpg","thumb2":"img/B0L69O2C77_2.jpg"},
+  "昆明南强街巷": {"id":"B036702A87","lng":"102.713700","lat":"25.034652","name":"南强步行街","addr":"南强街88号附10号","thumb":"img/B036702A87.jpg","thumb2":"img/B036702A87_2.jpg"},
+  "昆明栩云里（老街南屏步行街店）": {"id":"B0MAOCJCDT","lng":"102.712579","lat":"25.041735","name":"栩云里酒店(昆明老街南屏步行街店)","addr":"劝学巷11号阳光A版F3层","thumb":"img/B0MAOCJCDT.jpg","thumb2":"img/B0MAOCJCDT_2.jpg"},
+  "昆明大观公园": {"id":"B036700032","lng":"102.672444","lat":"25.021825","name":"大观公园","addr":"大观路284号","thumb":"img/B036700032.jpg","thumb2":"img/B036700032_2.jpg"},
+  "大理古城南门": {"id":"BV09214664","lng":"100.159741","lat":"25.685401","name":"大理古城南门(公交站)","addr":"4路;古城C2路;大理旅游公交快线","thumb":"img/BV09214664.jpg"},
+  "大理雲初客栈（古城南门店）": {"id":"B0KRSLE11I","lng":"100.157947","lat":"25.686802","name":"雲初客栈(大理古城南门店)","addr":"一塔路云端南舍旁边","thumb":"img/B0KRSLE11I.jpg","thumb2":"img/B0KRSLE11I_2.jpg"},
+  "大理龙龛码头": {"id":"B0FFI6ZBLL","lng":"100.207278","lat":"25.696830","name":"龙龛码头","addr":"环海西路270号","thumb":"img/B0FFI6ZBLL.jpg","thumb2":"img/B0FFI6ZBLL_2.jpg"},
+  "大理古城": {"id":"B0FFFZH0RQ","lng":"100.164000","lat":"25.694836","name":"大理古城","addr":"护国路172号","thumb":"img/B0FFFZH0RQ.jpg","thumb2":"img/B0FFFZH0RQ_2.jpg"},
+  "大理磻溪S湾": {"id":"B0KGZU6VC6","lng":"100.150486","lat":"25.766857","name":"磻溪S弯景点","addr":"磻溪完全小学北侧90米","thumb":"img/B0KGZU6VC6.jpg","thumb2":"img/B0KGZU6VC6_2.jpg"},
+  "喜洲古镇": {"id":"B0FFH27SSH","lng":"100.131582","lat":"25.852950","name":"喜洲古镇","addr":"清真路130号","thumb":"img/B0FFH27SSH.jpg","thumb2":"img/B0FFH27SSH_2.jpg"},
+  "丽江大研古城": {"id":"B0378008PR","lng":"100.235517","lat":"26.870507","name":"丽江古城","addr":"民主路与福慧路交叉口东南","thumb":"img/B0378008PR.jpg"},
+  "丽江三里田度假美宿（古城木府店）": {"id":"B0M6TD3646","lng":"100.232353","lat":"26.868536","name":"丽江.三里田度假美宿(丽江古城木府店)","addr":"光义街光碧巷 59 号","thumb":"img/B0M6TD3646.jpg","thumb2":"img/B0M6TD3646_2.jpg"},
+  "丽江白沙古镇": {"id":"B0378157X4","lng":"100.216933","lat":"26.953303","name":"白沙古镇","addr":"白沙镇","thumb":"img/B0378157X4.jpg","thumb2":"img/B0378157X4_2.jpg"},
+  "丽江玉湖村": {"id":"B0KAUUFZBQ","lng":"100.215046","lat":"26.999593","name":"丽江玉湖景区","addr":"玉湖村玉湖段二号","thumb":"img/B0KAUUFZBQ.jpg"},
+  "束河溪田悦上": {"id":"B0HDXHAIQF","lng":"100.209922","lat":"26.919107","name":"溪田·悦上|Yulong Snow Mountain View·玉龙雪山观景·客栈","addr":"束河街道开文社区东康七组48号","thumb":"img/B0HDXHAIQF.jpg"},
+  "玉龙雪山云杉坪": {"id":"B0378000KO","lng":"100.235197","lat":"27.129758","name":"云杉坪","addr":"15公里处玉龙雪山国家级风景名胜区内(西北角)","thumb":"img/B0378000KO.jpg","thumb2":"img/B0378000KO_2.jpg"},
+  "丽江蓝月谷": {"id":"B0378157WA","lng":"100.245886","lat":"27.124436","name":"玉龙雪山国家级风景名胜区蓝月谷","addr":"雪山景区内","thumb":"img/B0378157WA.jpg"},
+  "楚雄彝人古镇": {"id":"B036E145MP","lng":"101.518184","lat":"25.056934","name":"彝人古镇","addr":"永安路与车坪路交叉口北","thumb":"img/B036E145MP.jpg","thumb2":"img/B036E145MP_2.jpg"},
+  "楚雄予舍美宿（彝人古镇店）": {"id":"B0KKK5U2MZ","lng":"101.520828","lat":"25.059801","name":"楚雄予舍美宿酒店(彝人古镇店)","addr":"东瓜镇楚雄开发区永安路北侧彝人古镇D109幢","thumb":"img/B0KKK5U2MZ.jpg","thumb2":"img/B0KKK5U2MZ_2.jpg"},
+  "弥勒东风韵景区": {"id":"B0FFH0BC3I","lng":"103.384750","lat":"24.313135","name":"东风韵景区","addr":"葡萄观光大道","thumb":"img/B0FFH0BC3I.jpg","thumb2":"img/B0FFH0BC3I_2.jpg"},
+  "弥勒东风韵观璟民宿": {"id":"B0K6DX9H8A","lng":"103.383943","lat":"24.311740","name":"弥勒东风韵观璟民宿","addr":"东风农场街道东风韵景区文创6栋","thumb":"img/B0K6DX9H8A.jpg","thumb2":"img/B0K6DX9H8A_2.jpg"},
+  "弥勒云南红酒庄": {"id":"B0369142KS","lng":"103.387139","lat":"24.303995","name":"云南红酒庄","addr":"东风农场","thumb":"img/B0369142KS.jpg","thumb2":"img/B0369142KS_2.jpg"},
+  "弥勒湖泉生态园": {"id":"B03690I6B3","lng":"103.411153","lat":"24.396030","name":"湖泉水乡旅游度假区","addr":"温泉路","thumb":"img/B03690I6B3.jpg"},
+  "弥勒红河水乡": {"id":"B0FFGLXOK0","lng":"103.422371","lat":"24.394763","name":"红河水乡公园","addr":"石新汽专","thumb":"img/B0FFGLXOK0.jpg"},
+  "拾月柏雅温泉酒店弥勒": {"id":"B0KB6X8QNN","lng":"103.418042","lat":"24.399744","name":"拾月|柏雅温泉酒店(弥勒湖泉生态园湖泉半山温泉店)","addr":"弥阳街道湖泉湾1号财富新天地商业步行街1栋","thumb":"img/B0KB6X8QNN.jpg","thumb2":"img/B0KB6X8QNN_2.jpg"},
+  "百色解放街": {"id":"B0FFGQFX2S","lng":"106.626619","lat":"23.901829","name":"解放街","addr":"右江区","thumb":"img/B0FFGQFX2S.jpg"},
+  "百色澄碧湖": {"id":"B0FFGQCHB","lng":"106.602000","lat":"23.912000","name":"澄碧湖","addr":"右江区","thumb":"img/B0FFGQCHB.jpg"},
+  "百色格林东方酒店": {"id":"B0H6NHFNTH","lng":"106.638835","lat":"23.879858","name":"格林东方酒店(百色五中体育中心店)","addr":"百乐园幼儿园东1门旁","thumb":"img/B0H6NHFNTH.jpg","thumb2":"img/B0H6NHFNTH_2.jpg"},
+  "百色起义纪念园": {"id":"B0FFL8L3YY","lng":"106.635597","lat":"23.902718","name":"百色起义纪念园","addr":"城东大道112号","thumb":"img/B0FFL8L3YY.jpg","thumb2":"img/B0FFL8L3YY_2.jpg"},
+  "玉林格林豪泰(一环东路58号)": {"id":"B0K24SGD1Y","lng":"110.169530","lat":"22.633541","name":"格林豪泰酒店(玉林市云天文化城百花汇购物广场店)","addr":"一环东路58号","thumb":"img/B0K24SGD1Y.jpg","thumb2":"img/B0K24SGD1Y_2.jpg"}
+,
+  "丽江束河溪田悦上": {"id":"B0HDXHAIQF","lng":"100.209922","lat":"26.919107","name":"溪田·悦上|Yulong Snow Mountain View·玉龙雪山观景·客栈","addr":"束河街道开文社区东康七组48号","thumb":"img/B0HDXHAIQF.jpg","thumb2":"img/B0HDXHAIQF_2.jpg"},
+  "玉林夜市": {"id":"B0K6K5ZPKE","lng":"110.153593","lat":"22.627398","name":"玉林十字街夜市运营中心","addr":"解放路11号(口袋公园对面)","thumb":"img/B0K6K5ZPKE.jpg","thumb2":"img/B0K6K5ZPKE_2.jpg"},
+  "才村码头": {"lng":"100.1892","lat":"25.6898","name":"才村码头","addr":"大理市大理镇才村"}
+};
+
+function thumbBlock(kw, name){
+  const p = POI[kw];
+  if(!p || !p.thumb) return '';
+  if(p.thumb2){
+    const u1 = navUrl(kw);
+    return '<div class="thumbs2"><a href="'+u1+'"><img loading="lazy" decoding="async" src="'+p.thumb+'" alt="'+name+'" onerror="thumbErr(this)"></a>'+
+           '<a href="'+u1+'"><img loading="lazy" decoding="async" src="'+p.thumb2+'" alt="'+name+'" onerror="thumbErr(this)"></a></div>';
+  }
+  return '<a class="thumbwrap" href="'+navUrl(kw)+'"><img class="thumb" loading="lazy" decoding="async" src="'+p.thumb+'" alt="'+name+'" onerror="thumbErr(this)"></a>';
+}
+// 缺图兜底：加载失败时把破图替换为干净的地点占位卡（去重、不再显示破图标）
+function thumbErr(img){
+  var a = img.parentNode;
+  if(!a || !a.parentNode) return;
+  var big = a.parentNode.className && a.parentNode.className.indexOf('thumbs2') >= 0;
+  var ph = document.createElement('div');
+  ph.className = 'thumb-ph';
+  if(big) ph.style.height = '96px';
+  ph.textContent = img.getAttribute('alt') || '';
+  a.parentNode.replaceChild(ph, a);
+}
+
+function navUrl(kw){
+  // 高德移动端 POI 详情页深链（微信/系统浏览器均能唤起 App 并定位到该 POI）
+  const p = POI[kw];
+  if(p){
+    if(p.id){
+      const seg = [p.id, p.lng, p.lat, p.name, p.addr||''].join(',');
+      return "https://m.amap.com/poi/detail?__p="+encodeURIComponent(seg)+"&poiid="+encodeURIComponent(p.id)+"&src=app_share";
+    }
+    if(p.lng && p.lat){
+      // 高德 key 失效无法抓取 poiid 时，用坐标反查定位到店铺真实位置（地址 POI），避免掉进关键词搜索页
+      return "https://ditu.amap.com/regeo?lng="+p.lng+"&lat="+p.lat+"&name="+encodeURIComponent(p.name)+"&src=roadtrip&callnative=0&innersrc=uriapi";
+    }
+  }
+  return "https://m.amap.com/search/view/keywords="+encodeURIComponent(kw);
+}
+
+// 查看点评落点：POI 表里有 → 高德 POI 详情页（评分+用户评论，免登录）；
+// 否则 → 高德网页搜索，点店铺即看评价。统一走高德，避免大众点评登录墙。
+function reviewUrl(x){
+  if (x.nav && POI[x.nav]) return navUrl(x.nav);
+  return "https://m.amap.com/search/view/keywords="+encodeURIComponent((x.name||'').replace(/[（(].*$/,'').trim() || x.name);
+}
+
+
+
+function copyPOI(el){
+  const poi = el.closest('.poi');
+  if(!poi) return;
+  const pn = poi.querySelector('.pn');
+  const pa = poi.querySelector('.pa');
+  let txt = pn ? pn.textContent.trim() : '';
+  if (pa){ const t = pa.textContent.trim(); if (t && t !== txt) txt += '｜' + t; }
+  copyText(txt);
+}
+function copyText(t){
+  if(!t) return;
+  const done = ()=> showToast('已复制：'+t.slice(0,16)+(t.length>16?'…':''));
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(done).catch(()=> fallbackCopy(t,done));
+  } else { fallbackCopy(t,done); }
+}
+function fallbackCopy(t, cb){
+  const ta=document.createElement('textarea');
+  ta.value=t; ta.style.position='fixed'; ta.style.top='-9999px'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+  cb && cb();
+}
+let toastTimer;
+function showToast(msg){
+  let t=document.getElementById('toast');
+  if(!t){ t=document.createElement('div'); t.id='toast'; t.className='toast'; document.body.appendChild(t); }
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=> t.classList.remove('show'), 1800);
+}
+
+// determine active index
+let activeIdx = 0;
+if (today < TRIP_START) activeIdx = 0;
+else if (today > TRIP_END) activeIdx = DAYS.length-1;
+else {
+  for (let i=0;i<DAYS.length;i++){
+    const dt = new Date(DAYS[i].date);
+    if (dt.getMonth()===today.getMonth() && dt.getDate()===today.getDate()){ activeIdx=i; break; }
+    if (dt > today){ activeIdx = Math.max(0,i-1); break; }
+  }
+}
+
+// build date bar
+const bar = document.getElementById("bar");
+DAYS.forEach((d,i)=>{
+  const c = document.createElement("div");
+  c.className = "chip" + (i===activeIdx?" on":"");
+  c.innerHTML = '<span class="d">'+d.d+'</span> '+d.date.slice(5);
+  c.onclick = ()=> document.getElementById(d.d).scrollIntoView({behavior:"smooth",block:"start"});
+  bar.appendChild(c);
+});
+
+// ===== 当日动线：底部常驻简略版 + 半窗完整时间轴 =====
+function rtTimeline(day){
+  var r = ROUTES[day];
+  if (!r || !r.length) return '<div class="note">当日暂无动线数据</div>';
+  var s = '<div class="rtlegend"><span><i class="dotk"></i>重点</span><span><i class="dotn"></i>普通</span><span><i class="doto"></i>可选</span></div>';
+  s += '<div class="rttl">';
+  r.forEach(function(o){
+    var cls = (o.k === "key") ? "rk" : (o.k === "opt" ? "ro" : "rn");
+    s += '<div class="rtnode"><div class="rttime">' + o.t + '</div><div class="rtdot ' + cls + '"></div>' +
+         '<div class="rtbody"><div class="rtname">' + o.n + '</div><div class="rttype">' + o.ty + '</div></div></div>';
+  });
+  s += '</div>';
+  return s;
+}
+function rtMini(day){
+  var r = ROUTES[day];
+  if (!r || !r.length) return "";
+  return r.map(function(o){
+    var nm = o.n.split("\u00b7")[0].trim() || o.n;
+    nm = nm.replace(/\u2192/g, "\u203a");
+    if (nm.length > 12) nm = nm.slice(0, 12) + "\u2026";
+    var cls = "";
+    if (o.k === "key") cls = "rs-key";
+    else if (o.k === "opt"){ cls = "rs-opt"; nm = "\uff08" + nm + "\uff09"; }
+    return '<span class="' + cls + '">' + nm + '</span>';
+  }).join('<span class="rs-arw">\u2192</span>');
+}
+var RT_CUR = null;
+function rtDay(){ return RT_CUR || (DAYS[activeIdx] ? DAYS[activeIdx].d : DAYS[0].d); }
+function rtPaintBar(){
+  var day = rtDay();
+  var mini = document.getElementById("rtMini");
+  if (!mini) return;
+  var d = null;
+  for (var i = 0; i < DAYS.length; i++){ if (DAYS[i].d === day){ d = DAYS[i]; break; } }
+  var pre = (d && d.date ? String(d.date).slice(5) : day) + " \u52a8\u7ebf\uff1a";
+  mini.innerHTML = '<span class="rtmini-t">' + pre + '</span>' + rtMini(day);
+}
+// 标题区天气：展示【用户当前所在地】气温 + 天气 emoji（按访问时 IP 定位，非固定出发地）
+window.WXLIVE = window.WXLIVE || {};
+var HWX_CACHE = null, HWX_BUSY = false;
+function wxEmoji(code){
+  var m = {0:"☀️",1:"🌤️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",53:"🌦️",55:"🌦️",56:"🌧️",57:"🌧️",61:"🌧️",63:"🌧️",65:"🌧️",66:"🌧️",67:"🌧️",71:"🌨️",73:"🌨️",75:"🌨️",77:"🌨️",80:"🌦️",81:"🌦️",82:"🌦️",85:"🌨️",86:"🌨️",95:"⛈️",96:"⛈️",99:"⛈️"};
+  return m[code] || "🌡️";
+}
+// IP 定位返回的城市/地区多为英文（Guangzhou），映射为中文显示
+function cnCity(s){
+  if(!s) return s;
+  var map = {
+    "guangzhou":"广州","shenzhen":"深圳","kunming":"昆明","dali":"大理","lijiang":"丽江",
+    "chuxiong":"楚雄","mile":"弥勒","baise":"百色","nanning":"南宁","chongzuo":"崇左",
+    "jingxi":"靖西","yulin":"玉林","foshan":"佛山","dongguan":"东莞","zhongshan":"中山",
+    "zhuhai":"珠海","huizhou":"惠州","jiangmen":"江门","zhaoqing":"肇庆","shantou":"汕头",
+    "guilin":"桂林","guigang":"贵港","wuzhou":"梧州","hechi":"河池","liuzhou":"柳州",
+    "qujing":"曲靖","lincang":"临沧","puer":"普洱","xishuangbanna":"西双版纳","honghe":"红河",
+    "beijing":"北京","shanghai":"上海","chengdu":"成都","hangzhou":"杭州","guangdong":"广东",
+    "guangxi":"广西","yunnan":"云南","fujian":"福建","hunan":"湖南","hubei":"湖北",
+    "sichuan":"四川","zhejiang":"浙江","jiangsu":"江苏","shandong":"山东","henan":"河南",
+    "hebei":"河北","shanxi":"山西","shaanxi":"陕西","liaoning":"辽宁","jilin":"吉林",
+    "heilongjiang":"黑龙江","anhui":"安徽","jiangxi":"江西","gansu":"甘肃","qinghai":"青海",
+    "hainan":"海南","guizhou":"贵州","taiwan":"台湾","macau":"澳门","hong kong":"香港"
+  };
+  return map[String(s).trim().toLowerCase()] || s;
+}
+function paintHeaderWx(){
+  var reg = document.getElementById("htRegion");
+  if(!reg) return;
+  if(HWX_CACHE){
+    reg.textContent = "(" + HWX_CACHE.city + " " + HWX_CACHE.icon + " " + HWX_CACHE.t + "°C)";
+    return;
+  }
+  if(HWX_BUSY){ return; }
+  HWX_BUSY = true;
+  reg.textContent = "(定位中…)";
+  if(typeof fetch !== "function"){ HWX_BUSY = false; reg.textContent = "(玉林 --°C)"; return; }
+  function show(city,t,ic){ HWX_CACHE = {city:city,t:t,icon:ic}; var r=document.getElementById("htRegion"); if(r) r.textContent = "(" + city + " " + ic + " " + t + "°C)"; HWX_BUSY = false; }
+  function fail(){ HWX_BUSY = false; var r=document.getElementById("htRegion"); if(r) r.textContent = "(玉林 --°C)"; }
+  // 按经纬度取天气
+  function getWeather(g){
+    return fetch("https://api.open-meteo.com/v1/forecast?latitude=" + g.lat + "&longitude=" + g.lon + "&current=temperature_2m,weather_code&timezone=Asia%2FShanghai")
+      .then(function(r){ return r.json(); }).then(function(k){
+        var t = k.current && k.current.temperature_2m, code = k.current && k.current.weather_code;
+        if(t == null) throw new Error("no temp");
+        show(g.city, Math.round(t), wxEmoji(code));
+      });
+  }
+  // 定位源1：ipwho.is（CORS 开放，返回 latitude/longitude/city/region）
+  function geoIpwho(){
+    return fetch("https://ipwho.is/").then(function(r){ return r.json(); }).then(function(j){
+      if(!j || j.success === false || j.latitude == null || j.longitude == null) throw new Error("no coord");
+      return { lat:j.latitude, lon:j.longitude, city:cnCity(j.city || j.region || "本地") };
+    });
+  }
+  // 定位源2：ipinfo.io（CORS 开放，返回 loc="lat,lon"/city/region）
+  function geoIpinfo(){
+    return fetch("https://ipinfo.io/json").then(function(r){ return r.json(); }).then(function(j){
+      if(!j || !j.loc) throw new Error("no coord");
+      var p = String(j.loc).split(",");
+      return { lat:parseFloat(p[0]), lon:parseFloat(p[1]), city:cnCity(j.city || j.region || "本地") };
+    });
+  }
+  // 兜底：定位全部失败时用出发地玉林（广西玉林市坐标），保证不显示 (—)
+  function geoYulin(){ return { lat:22.63, lon:110.18, city:"玉林" }; }
+  geoIpwho().then(getWeather)
+    .catch(function(){ return geoIpinfo().then(getWeather); })
+    .catch(function(){ return getWeather(geoYulin()); })
+    .catch(fail);
+}
+function rtPaintSheet(){
+  var day = rtDay();
+  var cs = document.getElementById("rtChips");
+  var bd = document.getElementById("rtBody");
+  if (cs){
+    cs.innerHTML = DAYS.map(function(d){
+      var num = parseInt(d.d.slice(1), 10);
+      var dd = 'D' + ('0' + num).slice(-2);
+      return '<div class="rtchip' + (d.d === day ? " on" : "") + '" onclick="rtPick(\'' + d.d + '\')">' +
+             dd + ' · ' + d.date.slice(5) + '</div>';
+    }).join("");
+  }
+  if (bd) bd.innerHTML = rtTimeline(day);
+}
+function rtCenterChip(){
+  var c = document.querySelector("#rtChips .rtchip.on");
+  if (c && c.scrollIntoView) c.scrollIntoView({ block: "nearest", inline: "center" });
+}
+function openRoute(day){
+  if (day) RT_CUR = day;
+  else if (!RT_CUR) RT_CUR = DAYS[activeIdx] ? DAYS[activeIdx].d : DAYS[0].d;
+  rtPaintSheet();
+  var ov = document.getElementById("rtov");
+  if (ov) ov.classList.add("on");
+  rtCenterChip();
+}
+function closeRoute(){ var ov = document.getElementById("rtov"); if (ov) ov.classList.remove("on"); }
+function rtPick(day){ RT_CUR = day; rtPaintSheet(); rtPaintBar(); paintHeaderWx(); rtCenterChip(); }
+function rtFollow(){
+  if (!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function(es){
+    var best = null, bestR = 0;
+    es.forEach(function(e){
+      if (e.isIntersecting && e.intersectionRatio > bestR){ bestR = e.intersectionRatio; best = e.target; }
+    });
+    if (best && best.id && ROUTES[best.id]){ RT_CUR = best.id; rtPaintBar(); }
+  }, { rootMargin: "-45% 0px -45% 0px", threshold: [0, .25, .5, .75, 1] });
+  document.querySelectorAll(".card").forEach(function(c){ io.observe(c); });
+}
+function rtUpdBar(nb){
+  if (document.getElementById("rtupd")) return;
+  var el = document.createElement("div");
+  el.id = "rtupd"; el.className = "rtupd";
+  el.innerHTML = '<span>路书有新版本</span>' +
+    '<button onclick="rtDoUpdate()">更新</button>' +
+    '<button class="rtupd-x" onclick="this.parentNode.parentNode.removeChild(this.parentNode)">稍后</button>';
+  document.body.appendChild(el);
+}
+function rtDoUpdate(){
+  try { location.replace(location.pathname + "?_up=" + Date.now()); }
+  catch(e){ try { location.reload(true); } catch(e2){} }
+}
+function rtCheckUpdate(){
+  var m = document.querySelector('meta[name="rt-build"]');
+  var cur = m ? m.content : "";
+  if (!cur || typeof window.fetch !== "function") return;
+  setTimeout(function(){
+    window.fetch(location.pathname + "?_chk=" + Date.now(), { cache: "reload" })
+      .then(function(r){ return r.text(); })
+      .then(function(t){
+        var mm = /<meta name="rt-build" content="([^\"]+)"/.exec(t);
+        if (mm && mm[1] && mm[1] !== cur) rtUpdBar(mm[1]);
+      })
+      .catch(function(){});
+  }, 2500);
+}
+function rtInit(){
+  rtPaintBar(); rtFollow(); paintHeaderWx();
+  if (location.search.indexOf("_up=") >= 0){
+    try { history.replaceState({}, "", location.pathname); } catch(e){}
+  }
+  rtCheckUpdate();
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", rtInit);
+else rtInit();
+
+// 玩/住/吃 全局右侧浮层：根据当前日重绘按钮（用 data-day 记所属日）
+function locBlock(d){
+  var parts = [];
+  if (d.play && d.play.length) parts.push('<span class="lb lb-play" onclick="locTo(\''+d.d+'\',\'play\')">玩</span>');
+  parts.push('<span class="lb lb-stay" onclick="locTo(\''+d.d+'\',\'stay\')">住</span>');
+  if (d.eat && d.eat.length) parts.push('<span class="lb lb-eat" onclick="locTo(\''+d.d+'\',\'eat\')">吃</span>');
+  if (!parts.length) return '';
+  return '<div class="locbar" data-day="'+d.d+'">'+parts.join('')+'</div>';
+}
+// 重绘全局浮层（按当前滚动日）—— 单元素，跟随滚动自动切日
+var LOC_CUR = null;
+function paintLocBar(day){
+  if(!day) day = (LOC_CUR || (DAYS[0]?DAYS[0].d:''));
+  if(!day) return;
+  if(LOC_CUR === day) return;          // 同日不重绘（避免抖动）
+  LOC_CUR = day;
+  var d = DAYS.find(function(x){ return x.d === day; });
+  var bar = document.getElementById('locbar');
+  if(!bar) return;
+  bar.innerHTML = locBlock(d);
+  bar.style.display = (bar.innerHTML ? 'flex' : 'none');
+}
+function locTo(day, kind){
+  var id = 'sec-'+kind+'-'+day;
+  var el = document.getElementById(id);
+  if(!el) return;
+  // 按当前顶部 sticky 头部实际高度精确计算，落点正好在模块标题+首条内容下方（不再被日期栏遮挡）
+  var header = document.querySelector('header');
+  var hH = header ? Math.round(header.getBoundingClientRect().height) : 96;
+  var y = el.getBoundingClientRect().top + (window.scrollY || window.pageYOffset || 0) - hH - 10;
+  if (y < 0) y = 0;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+  el.style.transition = 'none';
+  el.style.boxShadow = '0 0 0 2px var(--gold)';
+  setTimeout(function(){ el.style.transition = 'box-shadow .9s ease'; el.style.boxShadow = 'none'; }, 40);
+  if (typeof showToast === 'function') showToast(({play:'玩',stay:'住',eat:'吃'})[kind] + ' · 已定位到 '+day);
+}
+
+// build cards
+const main = document.getElementById("main");
+const navLabel = "🧭 导航";
+DAYS.forEach((d,i)=>{
+  const card = document.createElement("div");
+  card.className = "card" + (i===activeIdx?" today":"");
+  card.id = d.d;
+
+  let html = '<div class="crow"><div class="crow-in"><span class="cd">'+d.d+'</span> '+
+             '<span class="cdate">'+d.date.slice(5)+'（'+d.week+'）· '+d.route+'</span>'+
+             (d.km?' <span class="ckm">'+d.km+'</span>':'')+
+             (d.team?' <span class="team">'+d.team+'</span>':'')+'</div>'+
+             '</div>';
+
+
+  // 日照金山观测模块（仅 D10/D11）
+  if (SUNMT[d.d]) html += sunmtBlock(d.d);
+
+  // 天气（平级区块，静态；优先实时预报，缺则气候均值）
+  if (WX[d.d]){
+    html += '<div class="sec" id="wxsec-'+d.d+'"><div class="ico">🌤️</div><div class="body">'+
+            '<div class="lbl">天气</div>'+
+            '<div class="txt" id="wx-main-'+d.d+'">'+WX[d.d].icon+' '+WX[d.d].region+' '+WX[d.d].norm+'°C</div>'+
+            '<div class="wx-cloth" id="wx-cloth-'+d.d+'">着 · '+clothTip(WX[d.d].norm, WX[d.d].icon, WX[d.d].region)+'</div>'+
+            '</div></div>';
+  }
+
+  // 行
+  html += '<div class="sec" id="sec-go-'+d.d+'"><div class="ico">🚗</div><div class="body"><div class="lbl">行</div><div class="txt">'+d.go+'</div></div></div>';
+
+  // 玩
+  if (d.play && d.play.length){
+    let p = '<div class="sec" id="sec-play-'+d.d+'"><div class="ico">🎯</div><div class="body"><div class="lbl">玩</div>';
+    d.play.forEach(x=>{
+      p += '<div class="poi"><div class="pn">'+x.name+'</div>';
+      p += thumbBlock(x.nav, x.name);
+      if (x.addr) p += '<div class="pa">'+x.addr+'</div>';
+      if (x.nav) p += '<a class="nav" href="'+navUrl(x.nav)+'">'+navLabel+'</a>';
+      p += '<span class="copy">📋 复制</span></div>';
+    });
+    p += '</div></div>';
+    html += p;
+  }
+
+  function fmtMD(s){ if(!s) return ''; var p=String(s).split('-'); var m=p[1]?parseInt(p[1],10):''; var dd=p[2]?parseInt(p[2],10):''; return m+'.'+dd; }
+
+  // 住
+  const s = d.stay;
+  html += '<div class="sec" id="sec-stay-'+d.d+'"><div class="ico">🏨</div><div class="body"><div class="lbl">住</div>'+
+          '<div class="poi"><div class="pn">'+s.name+'</div>';
+  if (s.note && s.note.indexOf('已订')>=0) html += '<span class="booked">已订</span>';
+  html += thumbBlock(s.nav, s.name);
+  if (s.addr) html += '<div class="pa">'+s.addr+'</div>';
+  if (s.feature) html += '<div class="feature">'+s.feature+'</div>';
+  if (s.name && s.name.indexOf('到家')<0){
+    var cm = fmtMD(d.date);
+    var co = (DAYS[i+1]) ? fmtMD(DAYS[i+1].date) : '';
+    html += '<div class="staydate">入住 '+cm+(co?' · 离店 '+co:'')+'</div>';
+  }
+  if (s.nav) html += '<a class="nav" href="'+navUrl(s.nav)+'">'+navLabel+'</a>';
+  if (s.tel) html += '<a class="tel" href="tel:'+s.tel+'">📞 电话</a>';
+  html += '<span class="copy">📋 复制</span></div></div></div>';
+
+  // 吃（层级：点评=店铺主锚点置顶；美食/位置=次推荐辅助行，可删减）
+  if (d.eat && d.eat.length){
+    let e = '<div class="sec eat-sec" id="sec-eat-'+d.d+'"><div class="ico">🍜</div><div class="body"><div class="lbl">吃</div>';
+    d.eat.slice().sort(function(a,b){
+      // 吃模块排序约定：店铺(有招牌菜) > POI(有地点导航的区域/地标) > 其他(纯文字建议)
+      // 店铺内部：吃(正餐/小吃/菌) > 咖啡(菜系含"咖啡") > 其他店(烘焙/伴手礼)
+      function rk(o){
+        if (o.dishes && o.dishes.length){
+          var c = o.cuisine || '';
+          if (c.indexOf('咖啡') >= 0) return 11;
+          if (c.indexOf('面包') >= 0 || c.indexOf('伴手礼') >= 0 || c.indexOf('蛋糕') >= 0 || c.indexOf('甜点') >= 0) return 12;
+          return 10; // 店铺·吃
+        }
+        if (o.nav) return 20; // POI：区域/地标导航推荐
+        return 30;            // 其他：纯文字建议
+      }
+      return rk(a) - rk(b);
+    }).forEach(x=>{
+      const isShop = !!x.dishes;
+      let subs = '';
+      // 次推荐① 美食（当地美食方向：菜系·人均 + 招牌菜）
+      if (x.dishes && x.dishes.length){
+        const food = [x.cuisine, x.price].filter(Boolean).join(' · ');
+        subs += '<div class="eat-sub"><span class="eb-t"><span class="eb-l">招牌菜</span>'+
+          (food?food+'&nbsp;&nbsp;':'')+
+          x.dishes.slice(0,3).map(function(dn){return '<span class="dish">'+dn+'</span>';}).join('')+
+          '</span></div>';
+      } else if (x.items){
+        subs += '<div class="eat-sub"><span class="eb-t">'+x.items+'</span></div>';
+      }
+      // 次推荐② 位置（商业街/地址 + 推荐文案）
+      const locTxt = (x.addr && x.addr !== x.name) ? x.addr : '';
+      if (locTxt || x.note){
+        subs += '<div class="eat-sub"><span class="eb-t pa">'+
+          (locTxt?locTxt:'')+
+          (x.note?'<span class="eat-note"> · '+x.note+'</span>':'')+
+          '</span></div>';
+      }
+      // 主锚点：店名 + 评分（整名可点，打开高德看店铺/评分/用户评论，无需登录）
+      const webUrl = reviewUrl(x);
+      e += '<div class="poi'+(isShop?'':' simple')+'"><div class="eat-hd">'+
+        (x.link?'<a class="pn" href="'+webUrl+'">'+x.name+'</a>':'<span class="pn">'+x.name+'</span>')+
+        (x.rating?'<span class="eat-rate">'+x.rating+'</span>':'')+
+        (!x.link?'<span class="copy">📋 复制</span>':'')+
+        '</div>'+subs;
+      // 独立行动行：仅保留「高德查看」（点评落点走高德）
+      if (x.link){
+        e += '<div class="eat-acts">'+
+          '<a class="eat-review" href="'+webUrl+'">高德查看</a>'+
+          '</div>';
+      }
+      e += '</div>';
+    });
+    e += '</div></div>';
+    html += e;
+  }
+
+  // 提醒（弱化：无背景块、浅灰小字、细左边线，置卡片底）
+  if (d.warn){
+    html += '<div class="sec tip-sec"><div class="ico">⚠️</div><div class="body"><div class="tip">'+d.warn+'</div></div></div>';
+  }
+
+  card.innerHTML = html;
+  main.appendChild(card);
+});
+
+// 实时天气：出行临近自动从 Open-Meteo 拉取真实预报，覆盖气候均值
+function wmoIcon(code){
+  if(code===0) return "☀️";
+  if(code===1) return "🌤";
+  if(code===2) return "⛅";
+  if(code===3) return "☁️";
+  if(code===45||code===48) return "🌫";
+  if(code>=51&&code<=67) return "🌧";
+  if(code>=71&&code<=77) return "❄️";
+  if(code>=80&&code<=82) return "🌦";
+  if(code>=85&&code<=86) return "🌨";
+  if(code>=95) return "⛈";
+  return "🌡";
+}
+function sunmtTier(low, mid, high){
+  // 加权遮挡度：低云最挡、中云次之、高云最轻（与 meiliforecast 判据一致：高低云≈0 时概率最大）
+  const obs = 0.5*low + 0.3*mid + 0.2*high;
+  if (obs <= 20) return {tier:"高",  range:"60–75%", color:"#1b5e20", bg:"#e8f5e9", border:"#a5d6a7"};
+  if (obs <= 40) return {tier:"中",  range:"40–55%", color:"#a35c00", bg:"#fff3e0", border:"#f3d9a8"};
+  if (obs <= 60) return {tier:"低",  range:"20–35%", color:"#a85a1c", bg:"#fdf3ec", border:"#f0c987"};
+  return            {tier:"极低", range:"<10%",   color:"#b71c1c", bg:"#fdecea", border:"#ef9a9a"};
+}
+function sunmtBlock(k){
+  const c = SUNMT[k]; if(!c) return '';
+  return '<div class="sunmt">'+
+    '<div class="sm-h">🌄 日照金山观测 · '+c.spot+'</div>'+
+    '<div class="sm-row">机位：'+c.spot+'｜时段：'+c.window+'</div>'+
+    '<div class="sm-prob">先验概率 <b style="color:#a35c00">'+SUNMT_PRIOR+'%</b> '+
+      '<span class="sm-tag">气候参考</span></div>'+
+    '<div class="sm-prob" id="sunmt-live-'+k+'">实时概率：<span style="color:#a35c00">临近(约9.12后)更新</span></div>'+
+    '<div class="sm-row">📌 决策信号：前一日傍晚看天——晴/见星→大概率；阴雨→老人小孩豁免</div>'+
+    '<div class="sm-row">🔭 辅助核验：天文通小程序（玉龙雪山·EC 云量≤40% → 值得早起）</div>'+
+    '<div class="sm-cum">本行程累计看金山概率 ≈'+SUNMT_CUM+'%（9.27 屋顶 + 9.28 甘海子，双窗口）</div>'+
+    '</div>';
+}
+function clothTip(avg, icon, region){
+  var t = parseInt(avg,10); if(isNaN(t)) t=20;
+  var ic = icon||'';
+  var rain = ic.indexOf('🌧')>=0 || ic.indexOf('🌦')>=0 || ic.indexOf('⛈')>=0 || ic.indexOf('❄')>=0;
+  var arr = [];
+  if(t<=15) arr.push('薄羽绒/防风外套');
+  else if(t<=22) arr.push('长袖外套');
+  else if(t<=28) arr.push('轻便透气');
+  else arr.push('短袖·防晒');
+  if(rain) arr.push('备雨具');
+  if(t<=12) arr.push('保暖帽');
+  if(/玉龙|丽江|香格里|大理/.test(region||'') && t<=16) arr.push('备氧气');
+  return arr.join(' · ');
+}
+function upgradeWeather(){
+  const horizon = new Date(today); horizon.setDate(horizon.getDate()+16);
+  const maxF = new Date(today); maxF.setDate(maxF.getDate()+16);   // Open-Meteo 免费层约 16 天窗口
+  const t0 = new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  const tasks = [];
+  DAYS.forEach(d=>{
+    const w = WX[d.d]; if(!w) return;
+    const dt = new Date(d.date);
+    if(dt < t0 || dt > horizon) return;            // 超出预报窗口，保留气候均值
+    const elMain = document.getElementById("wx-main-"+d.d); if(!elMain) return;
+    const elCloth = document.getElementById("wx-cloth-"+d.d);
+    const elSec = document.getElementById("wxsec-"+d.d);
+    const url = "https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lon+
+                "&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Asia%2FShanghai"+
+                "&start_date="+d.date+"&end_date="+d.date;
+    tasks.push(fetch(url).then(r=>r.json()).then(j=>{
+      const mx=j.daily&&j.daily.temperature_2m_max, mn=j.daily&&j.daily.temperature_2m_min, wc=j.daily&&j.daily.weathercode;
+      if(!mx||mx.length===0) return;
+      const avg=Math.round((mx[0]+mn[0])/2);
+      var ic = wmoIcon(wc[0]);
+      var cloth = clothTip(avg, ic, w.region);
+      elMain.textContent = ic+' '+w.region+' '+avg+'°C';
+      if(elCloth) elCloth.textContent = '着 · '+cloth;
+      if(elSec){ elSec.style.background = 'transparent'; elSec.title = '实时预报（Open-Meteo）'; }
+    }).catch(()=>{}));
+  });
+  // 日照金山：日出时段分层云量 → 实时概率（仅 D10/D11，临近 9.12 后才有数）
+  Object.keys(SUNMT).forEach(k=>{
+    const c = SUNMT[k];
+    const dt = new Date(c.date);
+    if (dt < t0 || dt > maxF) return;
+    const el = document.getElementById("sunmt-live-"+k);
+    if(!el) return;
+    const url = "https://api.open-meteo.com/v1/forecast?latitude="+c.coord.lat+"&longitude="+c.coord.lon+
+      "&hourly=cloud_cover_low,cloud_cover_mid,cloud_cover_high&timezone=Asia%2FShanghai"+
+      "&start_date="+c.date+"&end_date="+c.date;
+    tasks.push(fetch(url).then(r=>r.json()).then(j=>{
+      const h=j.hourly; if(!h||!h.time||!h.time.length) return;
+      let lo=0,mi=0,hi=0,n=0;
+      for(let i=0;i<h.time.length;i++){
+        const hh=h.time[i].slice(11,13);
+        if(hh>="06" && hh<="08"){
+          const a=h.cloud_cover_low[i], b=h.cloud_cover_mid[i], cc=h.cloud_cover_high[i];
+          if(a==null||b==null||cc==null) continue;
+          lo+=a; mi+=b; hi+=cc; n++;
+        }
+      }
+      if(!n) return;
+      const t = sunmtTier(lo/n, mi/n, hi/n);
+      el.innerHTML = '实时概率：<b style="color:'+t.color+'">约 '+t.range+'</b> '+
+        '<span class="sm-tag" style="background:'+t.bg+';color:'+t.color+';border:1px solid '+t.border+'">'+t.tier+'</span>';
+    }).catch(()=>{}));
+  });
+
+  Promise.allSettled(tasks).then(paintHeaderWx).catch(function(){});
+}
+upgradeWeather();
+
+// 点击复制（点 poi 名称或「📋 复制」按钮均可）
+main.addEventListener('click', e=>{
+  const cp = e.target.closest('.copy');
+  if(cp){ copyPOI(cp); return; }
+  const pn = e.target.closest('.pn');
+  if(pn && pn.tagName !== 'A'){ copyPOI(pn); return; }
+});
+
+// 回到今天/顶部按钮：行程中（今天在日期范围内）回今天卡片；行程外回页面顶部
+const today0 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+const start0 = new Date(TRIP_START.getFullYear(), TRIP_START.getMonth(), TRIP_START.getDate());
+const end0   = new Date(TRIP_END.getFullYear(), TRIP_END.getMonth(), TRIP_END.getDate());
+const inTrip = (today0 >= start0 && today0 <= end0);
+function todayIdx(){
+  for (let i=0;i<DAYS.length;i++){
+    const dd = new Date(DAYS[i].date);
+    if (dd.getFullYear()===today0.getFullYear() && dd.getMonth()===today0.getMonth() && dd.getDate()===today0.getDate()) return i;
+  }
+  return -1;
+}
+function goToday(){
+  if (inTrip){
+    const idx = todayIdx();
+    if (idx >= 0){
+      document.getElementById(DAYS[idx].d).scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+  }
+  document.getElementById('main').scrollIntoView({behavior:'smooth', block:'start'});
+}
+/* 备忘按钮取代回到顶部：id=memobtn */
+
+// 滚动联动：滑到某天时高亮对应 tab 并让 tab 条自动露出
+const spyChips = Array.from(document.querySelectorAll('#bar .chip'));
+const spyCards = DAYS.map(d=>document.getElementById(d.d));
+function setActiveTab(i){
+  spyChips.forEach((c,idx)=> c.classList.toggle('on', idx===i));
+  const c = spyChips[i];
+  if(c){
+    const barEl = document.getElementById('bar');
+    const left = c.offsetLeft - barEl.clientWidth/2 + c.clientWidth/2;
+    barEl.scrollTo({left, behavior:'smooth'});
+  }
+}
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const i = spyCards.indexOf(e.target);
+      if(i>=0){ setActiveTab(i); paintLocBar(spyCards[i].id); }
+    }
+  });
+}, {rootMargin: '-45% 0px -45% 0px', threshold: 0});
+// 首次绘制浮层（默认首日）
+setTimeout(function(){ paintLocBar(DAYS[0]?DAYS[0].d:''); }, 30);
+spyCards.forEach(c=> io.observe(c));
+
+// ===== 冷知识：底部钩子条 + 全屏翻阅视图（34 条翻页，每次 1 张 1 条）=====
+var TRIVIA_KEYS = DAYS.map(function(d){ return d.d; }); // ["D1".."D17"] 与 TRIVIA 同序
+// 展平 17天×2条 = 34 条（每天第1条在前、第2条在后）
+var TRIVIA_POOL = [];
+TRIVIA_KEYS.forEach(function(k){
+  var arr = TRIVIA[k]||[], mor = TRIVIA_MORE[k]||[];
+  var maxn = Math.max(arr.length, mor.length);
+  for (var s=0; s<maxn; s++){ if (arr[s] || mor[s]) TRIVIA_POOL.push({k:k, i:s}); }
+});
+// 每天首条在池中的下标（openTrivia 定位用）
+var TRIVIA_DAY_FIRST = {};
+TRIVIA_POOL.forEach(function(p, idx){ if (!(p.k in TRIVIA_DAY_FIRST)) TRIVIA_DAY_FIRST[p.k] = idx; });
+var kbIdx = 0;
+function triviaLoc(key){
+  var d = DAYS.find(function(x){ return x.d===key; });
+  if(!d) return '';
+  var parts = d.route.split(' → ');
+  return parts[parts.length-1];
+}
+/* 冷知识全屏：四套装饰母题，每次打开随机展示一套（牌堆/翻页交互不变） */
+var KB_MOTIFS = [
+  {cls:'m-osmanthus', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g stroke="#6b4a2a" stroke-width="2" fill="none" opacity="0.5"><path d="M300 30 q30 40 -10 90"/><path d="M300 60 q-20 30 -50 50"/></g><g fill="#E8B53A"><circle cx="296" cy="34" r="5"/><circle cx="306" cy="42" r="5"/><circle cx="290" cy="46" r="4"/><circle cx="252" cy="96" r="5"/><circle cx="262" cy="104" r="4"/><circle cx="60" cy="540" r="5"/><circle cx="72" cy="548" r="4"/><circle cx="52" cy="552" r="4"/><circle cx="40" cy="120" r="4"/><circle cx="320" cy="300" r="4"/></g></svg>'},
+  {cls:'m-green', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><polygon points="0,640 0,470 90,400 170,460 250,380 340,450 360,420 360,640" fill="#2E7D6B" opacity="0.85"/><polygon points="0,640 0,540 80,490 160,540 240,470 320,530 360,500 360,640" fill="#1E6B5A" opacity="0.95"/><polygon points="0,640 0,590 100,560 200,595 300,555 360,585 360,640" fill="#134B40"/></svg>'},
+  {cls:'m-tiedye', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><g fill="#ffffff" opacity="0.85"><circle cx="40" cy="80" r="3"/><circle cx="80" cy="140" r="2"/><circle cx="300" cy="60" r="3"/><circle cx="330" cy="160" r="2.5"/><circle cx="60" cy="300" r="2"/><circle cx="320" cy="320" r="3"/><circle cx="30" cy="420" r="2.5"/><circle cx="300" cy="470" r="2"/><circle cx="120" cy="560" r="3"/><circle cx="240" cy="590" r="2"/><circle cx="180" cy="40" r="2"/></g><g stroke="#cfe0ff" stroke-width="1.5" fill="none" opacity="0.4"><circle cx="300" cy="90" r="14"/><circle cx="300" cy="90" r="24"/><circle cx="55" cy="470" r="12"/><circle cx="55" cy="470" r="22"/></g></svg>'
+},
+  {cls:'m-route', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><path d="M-10 120 Q90 60 180 100 T380 80" fill="none" stroke="#E9C9A0" stroke-width="16" stroke-linecap="round" opacity="0.9"/><path d="M-10 120 Q90 60 180 100 T380 80" fill="none" stroke="#E08A3C" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round"/><g transform="translate(40,30)"><rect x="0" y="0" width="2.5" height="30" fill="#BA7517"/><path d="M2.5 0 L24 7 L2.5 14 Z" fill="#D85A30"/></g><g transform="translate(280,40)"><rect x="0" y="0" width="2.5" height="26" fill="#BA7517"/><path d="M2.5 0 L22 6 L2.5 12 Z" fill="#639922"/></g><path d="M0 560 Q90 520 180 560 T360 560 L360 640 L0 640 Z" fill="#E0C49A"/><g transform="translate(150,520)"><rect x="0" y="0" width="50" height="24" rx="9" fill="#D85A30"/><rect x="7" y="-13" width="28" height="15" rx="7" fill="#EFA98C"/><circle cx="12" cy="28" r="7" fill="#444441"/><circle cx="38" cy="28" r="7" fill="#444441"/></g></svg>'},
+  {cls:'m-camp', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><circle cx="300" cy="70" r="28" fill="#F4E4B8"/><circle cx="314" cy="62" r="23" fill="#1F3A5F"/><g fill="#FBF3E7"><circle cx="40" cy="60" r="2.6"/><circle cx="100" cy="40" r="2"/><circle cx="170" cy="80" r="2.6"/><circle cx="230" cy="50" r="2"/><circle cx="70" cy="150" r="2"/><circle cx="140" cy="130" r="2.6"/><circle cx="280" cy="150" r="2"/><circle cx="50" cy="220" r="2"/><circle cx="200" cy="190" r="2"/></g><g transform="translate(70,470)"><path d="M0 90 L55 0 L110 90 Z" fill="#3B6D11"/><path d="M40 90 L55 30 L70 90 Z" fill="#1F3A5F"/><rect x="48" y="66" width="14" height="24" fill="#854F0B"/></g><g transform="translate(220,510)"><path d="M0 44 Q15 0 30 44 Z" fill="#E08A3C"/><path d="M7 44 Q15 14 23 44 Z" fill="#FAC775"/><circle cx="15" cy="52" r="5" fill="#BA7517"/></g></svg>'},
+  {cls:'m-sky', deco:'<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><circle cx="300" cy="64" r="26" fill="#FAC775"/><g stroke="#EF9F27" stroke-width="3" stroke-linecap="round"><line x1="300" y1="22" x2="300" y2="8"/><line x1="342" y1="64" x2="356" y2="64"/><line x1="330" y1="34" x2="340" y2="24"/><line x1="330" y1="94" x2="340" y2="104"/></g><g transform="translate(50,90)"><path d="M0 54 A26 26 0 0 1 52 54 Z" fill="#D85A30"/><path d="M18 54 A9 26 0 0 1 34 54 Z" fill="#EFA98C"/><rect x="20" y="66" width="12" height="14" rx="2" fill="#854F0B"/></g><g transform="translate(220,140)"><path d="M0 40 A20 20 0 0 1 40 40 Z" fill="#185FA5"/><rect x="14" y="50" width="12" height="12" rx="2" fill="#854F0B"/></g><g transform="translate(30,200)" fill="#FFFFFF"><ellipse cx="22" cy="22" rx="28" ry="15"/><ellipse cx="46" cy="16" rx="19" ry="13"/><ellipse cx="4" cy="16" rx="15" ry="11"/></g><g transform="translate(210,250)" fill="#FFFFFF"><ellipse cx="20" cy="18" rx="24" ry="13"/><ellipse cx="40" cy="12" rx="15" ry="10"/></g></svg>'}
+];
+function applyKbMotif(){
+  var m = KB_MOTIFS[Math.floor(Math.random()*KB_MOTIFS.length)];
+  var ov = document.getElementById('kbov');
+  ov.className = 'kbov ' + m.cls;
+  document.getElementById('kbDeco').innerHTML = m.deco;
+}
+function renderTrivia(idx){
+  var n = TRIVIA_POOL.length;            // 34
+  idx = ((idx % n) + n) % n;
+  kbIdx = idx;
+  var p = TRIVIA_POOL[idx];
+  document.getElementById('kbD').textContent = p.k + ' · ' + triviaLoc(p.k) + ' · 第' + (p.i+1) + '条';
+  var arr = (TRIVIA[p.k] || []);
+  var mor = (TRIVIA_MORE[p.k] || []);
+  var b = '<div class="kb-item"><div class="kb-main">'+arr[p.i]+'</div>'+(mor[p.i]?'<div class="kb-more">'+mor[p.i]+'</div>':'')+'</div>';
+  document.getElementById('kbMain').innerHTML = b;
+  document.getElementById('kbCnt').textContent = (idx+1) + ' / ' + n;
+  document.getElementById('kbDots').textContent = '第 ' + (idx+1) + ' / ' + n + ' 条';
+}
+function openTrivia(arg){
+  var i;
+  if (typeof arg === 'number') i = arg;                                  // 底部条点击：精确定位到展示的那一条
+  else i = (arg in TRIVIA_DAY_FIRST) ? TRIVIA_DAY_FIRST[arg] : 0;        // 手势上滑：定位到该天首条
+  applyKbMotif();
+  document.getElementById('kbov').classList.add('on');
+  renderTrivia(i);
+}
+function closeTrivia(){ document.getElementById('kbov').classList.remove('on'); }
+function kbStep(dir){ renderTrivia(kbIdx + dir); }
+function kbRand(){ renderTrivia(Math.floor(Math.random()*TRIVIA_POOL.length)); }
+/* 冷知识彩蛋：单次标签内累计浏览满阈值后，右侧说明上方冒出抖动彩蛋，点击破裂进冷知识全屏 */
+function eggClick(){
+  var e = document.getElementById('eggbtn');
+  if(!e || e.classList.contains('burst')) return;
+  e.classList.add('burst');
+  for(var i=0;i<10;i++){
+    var p = document.createElement('span'); p.className='puff';
+    var ang = Math.PI*2*i/10, dist = 26+Math.random()*16;
+    p.style.setProperty('--dx', (Math.cos(ang)*dist).toFixed(1)+'px');
+    p.style.setProperty('--dy', (Math.sin(ang)*dist).toFixed(1)+'px');
+    e.appendChild(p);
+  }
+  setTimeout(function(){
+    try{ sessionStorage.setItem('roadtrip_egg_done','1'); }catch(_){}
+    openTrivia();
+    e.style.display='none'; e.classList.remove('burst','show');
+  }, 460);
+}
+(function(){
+  var KEY='roadtrip_view_ms', DONE='roadtrip_egg_done', TH=30*60*1000, shown=false;
+  function getms(){ try{ return parseInt(sessionStorage.getItem(KEY)||'0',10)||0; }catch(_){ return 0; } }
+  function add(ms){ try{ sessionStorage.setItem(KEY, String(getms()+ms)); }catch(_){} }
+  function showEgg(){
+    if(shown) return;
+    try{ if(sessionStorage.getItem(DONE)) return; }catch(_){}
+    var e=document.getElementById('eggbtn'); if(!e) return;
+    shown=true; e.classList.add('show');
+  }
+  try{ if(!sessionStorage.getItem(DONE) && getms()>=TH) showEgg(); }catch(_){}
+  setInterval(function(){
+    if(document.visibilityState==='visible' && (!document.hasFocus || document.hasFocus())){
+      add(5000); if(getms()>=TH) showEgg();
+    }
+  }, 5000);
+})();
+// 底部入口：从全部冷知识（17天×2条=34条）里随机抽一条展示，过长跑马灯；点击进翻阅视图并定位到该天
+// 底部条：从全部冷知识（34 条）构建轮换池，每 10s 切下一条，新条从右侧进入
+var kbBarPool = TRIVIA_POOL.map(function(p, idx){
+  var arr = (TRIVIA[p.k]||[]);
+  var h = arr[p.i] || ((TRIVIA_MORE[p.k]||[])[p.i] || '');
+  return {k:p.k, poolIdx:idx, h:h};
+}).filter(function(x){ return x.h; });
+var kbBarPos = Math.floor(Math.random()*kbBarPool.length);
+var kbBarIdx = 0;
+function kbBarShow(pos, animate){
+  var n = kbBarPool.length;
+  pos = ((pos % n) + n) % n;
+  kbBarPos = pos;
+  var item = kbBarPool[pos];
+  kbBarKey = item.k;
+  kbBarIdx = item.poolIdx;
+  var txt = document.getElementById('kbText');
+  txt.classList.remove('mq','kb-in-right');
+  txt.innerHTML = '';
+  txt.textContent = item.h;
+  if (animate){
+    void txt.offsetWidth;                 // 强制回流以重放进入动画
+    txt.classList.add('kb-in-right');
+  }
+  requestAnimationFrame(function(){
+    if (txt.scrollWidth > txt.parentElement.clientWidth){
+      txt.innerHTML = '<span>'+item.h+'</span><span>'+item.h+'</span>';
+      txt.classList.remove('kb-in-right');
+      txt.classList.add('mq');
+    }
+  });
+}
+kbBarShow(kbBarPos, false);              // 初始静态展示
+setInterval(function(){                   // 每 10s 轮换下一条（从右进入）；翻阅视图打开时暂停
+  if (document.getElementById('kbov').classList.contains('on')) return;
+  kbBarShow(kbBarPos + 1, true);
+}, 10000);
+// 点击遮罩空白处关闭
+document.getElementById('kbov').addEventListener('click', function(e){
+  if (e.target.closest('.kb-card') || e.target.closest('.kb-back') || e.target.closest('button')) return;
+  closeTrivia();
+});
+// 底部条上滑手势也可打开
+(function(){
+  var bar = document.getElementById('kbbar');
+  var sy=0;
+  bar.addEventListener('touchstart', function(e){ sy=e.touches[0].clientY; }, {passive:true});
+  bar.addEventListener('touchend', function(e){
+    if (sy - e.changedTouches[0].clientY > 40) openTrivia(DAYS[activeIdx].d);
+  }, {passive:true});
+})();
+// 触摸滑动切换
+(function(){
+  var body = document.getElementById('kbBody');
+  var sx=0, sy=0;
+  body.addEventListener('touchstart', function(e){ var t=e.touches[0]; sx=t.clientX; sy=t.clientY; }, {passive:true});
+  body.addEventListener('touchend', function(e){
+    var t=e.changedTouches[0]; var dx=t.clientX-sx, dy=t.clientY-sy;
+    if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy)){ kbStep(dx<0?1:-1); }
+  }, {passive:true});
+})();
+// 键盘左右 / Esc
+document.addEventListener('keydown', function(e){
+  if(!document.getElementById('kbov').classList.contains('on')) return;
+  if(e.key==='ArrowLeft') kbStep(-1);
+  else if(e.key==='ArrowRight') kbStep(1);
+  else if(e.key==='Escape') closeTrivia();
+});
+
+// scroll to active
+window.addEventListener("load", ()=>{
+  setTimeout(()=> document.getElementById(DAYS[activeIdx].d).scrollIntoView({block:"start"}), 60);
+});
+
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./sw.js').catch(function () {});
+    });
+  }
+</script>
+
+<div class="memoov" id="helpov" onclick="closeHelp()">
+  <div class="memo-sheet" onclick="event.stopPropagation()">
+    <div class="memo-grip"></div>
+    <div class="memo-hd">
+      <div class="memo-t">路书怎么用</div>
+      <div class="memo-acts"><button class="memo-x" onclick="closeHelp()">关闭</button></div>
+    </div>
+    <div class="memo-body help-body" id="helpBody">
+<p class="help-lead">这路书就是给一家人出门用的。手机点开就能用，字也大，老花眼看不费劲。一路上的行程、导航、要记的东西，全在这一个页面里，跟着走就踏实。</p>
+<div class="help-sub">总览</div>
+<p class="help-d">这是一本跟着你走的随身路书。每天翻开是一页，最底下那条会跟着你滑到哪天、就显示哪天；想看哪类，右边小标签点一下就跳过去，不用自己慢慢翻。</p>
+<div class="help-svg"><svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" width="340" height="300">
+  <defs><marker id="help_a0" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#c8881f"/></marker></defs>
+  <rect x="60" y="14" width="220" height="262" rx="22" fill="#ffffff" stroke="#e7ddc8" stroke-width="2"/>
+  <rect x="60" y="14" width="220" height="38" rx="22" fill="#fff7ec"/>
+  <rect x="76" y="28" width="120" height="11" rx="5" fill="#3a3128" opacity="0.8"/>
+  <circle cx="262" cy="33" r="8" fill="#ffd54a"/>
+  <text x="248" y="37" font-size="9" fill="#b8860b" text-anchor="end">33°</text>
+  <rect x="76" y="64" width="188" height="150" rx="12" fill="#faf7f0" stroke="#efe6d2"/>
+  <g font-size="8" fill="#6b6358">
+    <rect x="88" y="78" width="18" height="10" rx="3" fill="#6b6358"/><rect x="112" y="80" width="140" height="6" rx="3" fill="#e0d6c2"/>
+    <rect x="88" y="98" width="18" height="10" rx="3" fill="#3B6D11"/><rect x="112" y="100" width="120" height="6" rx="3" fill="#e0d6c2"/>
+    <rect x="88" y="118" width="18" height="10" rx="3" fill="#185FA5"/><rect x="112" y="120" width="150" height="6" rx="3" fill="#e0d6c2"/>
+    <rect x="88" y="138" width="18" height="10" rx="3" fill="#D85A30"/><rect x="112" y="140" width="110" height="6" rx="3" fill="#e0d6c2"/>
+    <rect x="88" y="158" width="18" height="10" rx="3" fill="#b8860b"/><rect x="112" y="160" width="130" height="6" rx="3" fill="#e0d6c2"/>
+    <rect x="88" y="178" width="18" height="10" rx="3" fill="#6b6358"/><rect x="112" y="180" width="120" height="6" rx="3" fill="#e0d6c2"/>
+  </g>
+  <rect x="60" y="228" width="220" height="48" rx="0" fill="#3a3128"/>
+  <rect x="76" y="244" width="150" height="7" rx="3" fill="#c8881f" opacity="0.85"/>
+  <rect x="214" y="240" width="52" height="16" rx="8" fill="#c8881f"/>
+  <text x="240" y="252" font-size="9" fill="#fff" text-anchor="middle">展开</text>
+  <rect x="270" y="120" width="14" height="44" rx="7" fill="#c8881f"/>
+  <text x="277" y="143" font-size="8" fill="#fff" text-anchor="middle">住</text>
+  <rect x="4" y="118" width="118" height="40" rx="8" fill="#fff" stroke="#c8881f" stroke-width="1.2"/>
+  <text x="14" y="134" font-size="9" fill="#3a3128">右边小标签</text>
+  <text x="14" y="148" font-size="9" fill="#6b6358">一点就跳玩住吃</text>
+  <line x1="122" y1="138" x2="268" y2="138" stroke="#c8881f" stroke-width="1.4" marker-end="url(#help_a0)"/>
+  <rect x="4" y="236" width="118" height="40" rx="8" fill="#fff" stroke="#c8881f" stroke-width="1.2"/>
+  <text x="14" y="252" font-size="9" fill="#3a3128">最底下这条</text>
+  <text x="14" y="266" font-size="9" fill="#6b6358">显示当天动线</text>
+  <line x1="122" y1="256" x2="74" y2="252" stroke="#c8881f" stroke-width="1.4" marker-end="url(#help_a0)"/>
+</svg></div>
+<h3 class="help-grp">一、看行程（天天要用）</h3>
+<p class="help-grp-lead">每天一页，把<b>行、玩、住、吃</b>都排得清清楚楚。下面几个小功能，帮你更快找到想看的内容。</p>
+<div class="help-card"><h4 class="help-card-t">1. 每天一页行程卡</h4>
+<p class="help-d">每一天就是一页纸，今天去哪、住哪、吃啥都安排好了。大字写着，一眼就明白今天咋安排，不用自己操心记。</p>
+<div class="help-svg"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" width="340" height="200">
+  <rect x="30" y="16" width="220" height="168" rx="14" fill="#faf7f0" stroke="#c8881f" stroke-width="2"/>
+  <rect x="46" y="30" width="100" height="12" rx="6" fill="#3a3128" opacity="0.8"/>
+  <text x="200" y="41" font-size="10" fill="#b8860b" text-anchor="middle">🌤 22°</text>
+  <g font-size="8" fill="#6b6358">
+    <rect x="46" y="58" width="18" height="11" rx="3" fill="#6b6358"/><rect x="70" y="60" width="150" height="7" rx="3" fill="#e0d6c2"/>
+    <rect x="46" y="82" width="18" height="11" rx="3" fill="#3B6D11"/><rect x="70" y="84" width="130" height="7" rx="3" fill="#e0d6c2"/>
+    <rect x="46" y="106" width="18" height="11" rx="3" fill="#185FA5"/><rect x="70" y="108" width="160" height="7" rx="3" fill="#e0d6c2"/>
+    <rect x="46" y="130" width="18" height="11" rx="3" fill="#D85A30"/><rect x="70" y="132" width="110" height="7" rx="3" fill="#e0d6c2"/>
+    <rect x="46" y="154" width="18" height="11" rx="3" fill="#b8860b"/><rect x="70" y="156" width="140" height="7" rx="3" fill="#e0d6c2"/>
+  </g>
+  <rect x="42" y="22" width="64" height="16" rx="8" fill="#c8881f"/>
+  <text x="50" y="34" font-size="9" fill="#fff">每天一页</text>
+  <rect x="258" y="64" width="78" height="44" rx="8" fill="#fff" stroke="#c8881f" stroke-width="1.2"/>
+  <text x="268" y="82" font-size="9" fill="#3a3128">行住玩吃</text>
+  <text x="268" y="96" font-size="9" fill="#6b6358">都写在这</text>
+</svg></div>
+</div>
+<div class="help-card"><h4 class="help-card-t">2. 玩住吃 一点就跳</h4>
+<p class="help-d">右边那排小标签（玩 / 住 / 吃），手指点一下，页面就跳到那一段，不用上下翻半天找。</p>
+<div class="help-svg"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" width="340" height="200">
+  <defs><marker id="help_a2" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#c8881f"/></marker></defs>
+  <rect x="36" y="20" width="210" height="160" rx="14" fill="#faf7f0" stroke="#efe6d2" stroke-width="1.5"/>
+  <g font-size="8" fill="#6b6358">
+    <rect x="56" y="44" width="160" height="8" rx="4" fill="#e0d6c2"/>
+    <rect x="56" y="74" width="140" height="8" rx="4" fill="#e0d6c2"/>
+    <rect x="56" y="104" width="160" height="8" rx="4" fill="#e0d6c2"/>
+    <rect x="56" y="134" width="120" height="8" rx="4" fill="#e0d6c2"/>
+  </g>
+  <rect x="56" y="32" width="54" height="10" rx="5" fill="#3B6D11"/>
+  <text x="83" y="40" font-size="8" fill="#fff" text-anchor="middle">玩这段</text>
+  <g>
+    <rect x="250" y="44" width="20" height="24" rx="10" fill="#3B6D11"/><text x="260" y="59" font-size="8" fill="#fff" text-anchor="middle">玩</text>
+    <rect x="250" y="86" width="20" height="24" rx="10" fill="#185FA5"/><text x="260" y="101" font-size="8" fill="#fff" text-anchor="middle">住</text>
+    <rect x="250" y="128" width="20" height="24" rx="10" fill="#D85A30"/><text x="260" y="143" font-size="8" fill="#fff" text-anchor="middle">吃</text>
+  </g>
+  <rect x="244" y="84" width="28" height="32" rx="14" fill="none" stroke="#c8881f" stroke-width="2"/>
+  <text x="44" y="176" font-size="9" fill="#c8881f" font-weight="700">手指一点 →</text>
+  <line x1="116" y1="172" x2="256" y2="100" stroke="#c8881f" stroke-width="1.4" marker-end="url(#help_a2)"/>
+</svg></div>
+</div>
+<div class="help-card"><h4 class="help-card-t">3. 最底下一条：当日动线</h4>
+<p class="help-d">页面最底下那条，你滑到哪天，它就显示哪天怎么走。点开是个全程的时间轴，17 天随便翻看，心里有谱。</p>
+<div class="help-svg"><svg viewBox="0 0 340 230" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" width="340" height="230">
+  <defs><marker id="help_a3" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#c8881f"/></marker></defs>
+  <rect x="36" y="16" width="240" height="120" rx="12" fill="#faf7f0" stroke="#efe6d2" stroke-width="1.5"/>
+  <text x="52" y="36" font-size="10" font-weight="700" fill="#3a3128">今天动线</text>
+  <line x1="66" y1="54" x2="66" y2="118" stroke="#d9ccb0" stroke-width="2"/>
+  <g font-size="8" fill="#6b6358">
+    <circle cx="66" cy="62" r="5" fill="#c8881f"/><rect x="82" y="58" width="160" height="7" rx="3" fill="#e0d6c2"/>
+    <circle cx="66" cy="84" r="5" fill="#c8881f"/><rect x="82" y="80" width="130" height="7" rx="3" fill="#e0d6c2"/>
+    <circle cx="66" cy="106" r="5" fill="#c8881f"/><rect x="82" y="102" width="180" height="7" rx="3" fill="#e0d6c2"/>
+  </g>
+  <rect x="44" y="120" width="150" height="26" rx="8" fill="#fff" stroke="#c8881f" stroke-width="1.2"/>
+  <text x="54" y="137" font-size="9" fill="#3a3128">滑到哪天，就显哪天</text>
+  <rect x="36" y="150" width="240" height="46" rx="0" fill="#3a3128"/>
+  <rect x="52" y="166" width="170" height="8" rx="4" fill="#c8881f" opacity="0.85"/>
+  <rect x="214" y="162" width="50" height="16" rx="8" fill="#c8881f"/>
+  <text x="239" y="174" font-size="9" fill="#fff" text-anchor="middle">展开</text>
+  <text x="250" y="70" font-size="9" fill="#c8881f" font-weight="700">点开看全程 →</text>
+  <line x1="252" y1="76" x2="238" y2="170" stroke="#c8881f" stroke-width="1.4" marker-end="url(#help_a3)"/>
+</svg></div>
+</div>
+<div class="help-card"><h4 class="help-card-t">4. 店家地址电话 一点就有</h4>
+<p class="help-d">每到一处景点、每一家乡食店，地图、电话、点评都给你点好放在那了。点击导航目的地或者电话和店家沟通</p>
+<div class="help-svg"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" width="340" height="200">
+  <rect x="36" y="22" width="240" height="150" rx="14" fill="#faf7f0" stroke="#efe6d2" stroke-width="1.5"/>
+  <rect x="56" y="40" width="150" height="12" rx="6" fill="#3a3128" opacity="0.8"/>
+  <rect x="56" y="62" width="200" height="7" rx="3" fill="#e0d6c2"/>
+  <g font-size="9" fill="#fff" text-anchor="middle">
+    <rect x="56" y="92" width="50" height="28" rx="9" fill="#185FA5"/><text x="81" y="110">导航</text>
+    <rect x="114" y="92" width="50" height="28" rx="9" fill="#3B6D11"/><text x="139" y="110">电话</text>
+    <rect x="172" y="92" width="50" height="28" rx="9" fill="#D85A30"/><text x="197" y="110">点评</text>
+    <rect x="230" y="92" width="42" height="28" rx="9" fill="#b8860b"/><text x="251" y="110">复制</text>
+  </g>
+  <rect x="52" y="88" width="220" height="36" rx="12" fill="none" stroke="#c8881f" stroke-width="2"/>
+  <rect x="56" y="140" width="216" height="26" rx="8" fill="#fff" stroke="#c8881f" stroke-width="1.2"/>
+  <text x="66" y="157" font-size="9" fill="#3a3128">点一下，地图电话点评都有</text>
+</svg></div>
+</div>
+<h3 class="help-grp">二、路上小帮手</h3>
+<p class="help-grp-lead">除了看行程，还备了几个贴心小功能，出门更省心。</p>
+<div class="help-card"><h4 class="help-card-t">5. 顶上写着咱们这儿的天气</h4>
+<p class="help-d">标题上会显示你当天所在城市的天气和温度。出门前瞄一眼，带伞还是加衣，心里有数。</p>
+<div class="help-svg"><svg viewBox="0 0 340 180" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" width="340" height="180">
+  <defs><marker id="help_a5" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#c8881f"/></marker></defs>
+  <rect x="40" y="40" width="260" height="54" rx="16" fill="#fff7ec" stroke="#efe6d2" stroke-width="1.5"/>
+  <circle cx="78" cy="67" r="15" fill="#ffd54a"/>
+  <text x="104" y="64" font-size="12" font-weight="700" fill="#3a3128">广州</text>
+  <text x="104" y="82" font-size="10" fill="#6b6358">晴 · 33°C</text>
+  <g transform="translate(210,52)"><ellipse cx="20" cy="14" rx="20" ry="12" fill="#cfe0ee"/><line x1="12" y1="28" x2="10" y2="36" stroke="#7fa8c9" stroke-width="2"/><line x1="22" y1="28" x2="20" y2="36" stroke="#7fa8c9" stroke-width="2"/><line x1="32" y1="28" x2="30" y2="36" stroke="#7fa8c9" stroke-width="2"/></g>
+  <text x="44" y="140" font-size="9" fill="#c8881f" font-weight="700">出门前看一眼 →</text>
+  <line x1="120" y1="134" x2="120" y2="68" stroke="#c8881f" stroke-width="1.4" marker-end="url(#help_a5)"/>
+</svg></div>
+</div>
+<div class="help-card"><h4 class="help-card-t">6. 顶上一小条冷知识，点开慢慢翻</h4>
+<p class="help-d">顶上有一条会滚动的小字，讲一路上各地的<b>有意思的小知识（冷知识）</b>。点开能变成卡片慢慢翻，等饭、堵车的时候看看，不无聊。</p>
+<div class="help-svg"><svg viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" width="340" height="210">
+  <defs><marker id="help_a6" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#c8881f"/></marker></defs>
+  <rect x="38" y="20" width="264" height="26" rx="13" fill="#fff7ec" stroke="#efe6d2" stroke-width="1.5"/>
+  <text x="54" y="37" font-size="9" fill="#b8860b">📜 万花筒是广西瑰宝……</text>
+  <rect x="36" y="18" width="268" height="30" rx="15" fill="none" stroke="#c8881f" stroke-width="2"/>
+  <rect x="56" y="64" width="228" height="110" rx="12" fill="#faf7f0" stroke="#efe6d2" stroke-width="1.5"/>
+  <rect x="72" y="80" width="120" height="11" rx="5" fill="#c8881f"/>
+  <g font-size="8" fill="#6b6358">
+    <rect x="72" y="102" width="190" height="6" rx="3" fill="#e0d6c2"/>
+    <rect x="72" y="116" width="180" height="6" rx="3" fill="#e0d6c2"/>
+    <rect x="72" y="130" width="200" height="6" rx="3" fill="#e0d6c2"/>
+    <rect x="72" y="144" width="150" height="6" rx="3" fill="#e0d6c2"/>
+  </g>
+  <rect x="196" y="78" width="78" height="30" rx="8" fill="#fff" stroke="#c8881f" stroke-width="1.2"/>
+  <text x="206" y="98" font-size="9" fill="#3a3128">慢慢翻着看</text>
+  <text x="52" y="200" font-size="9" fill="#c8881f" font-weight="700">点开慢慢翻 →</text>
+  <line x1="130" y1="194" x2="170" y2="35" stroke="#c8881f" stroke-width="1.4" marker-end="url(#help_a6)"/>
+</svg></div>
+</div>
+<div class="help-card"><h4 class="help-card-t">7. 出发前把要带的东西列成清单</h4>
+<p class="help-d">出发前把药、证件、充电线这些要带的，先在手机里勾个清单。到了路上随时看，各人记各人的、互不耽误，写下来就不会忘。</p>
+<div class="help-svg"><svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" width="340" height="200">
+  <rect x="60" y="20" width="220" height="170" rx="14" fill="#fffdf7" stroke="#efe6d2" stroke-width="1.5"/>
+  <rect x="58" y="18" width="224" height="174" rx="16" fill="none" stroke="#c8881f" stroke-width="2"/>
+  <rect x="60" y="20" width="220" height="28" rx="14" fill="#fff7ec"/>
+  <text x="170" y="39" font-size="11" font-weight="700" fill="#3a3128" text-anchor="middle">📋 我的清单</text>
+  <g font-size="9" fill="#3a3128">
+    <rect x="76" y="60" width="12" height="12" rx="3" fill="#3B6D11"/><text x="96" y="70">常用药</text>
+    <rect x="76" y="88" width="12" height="12" rx="3" fill="#fff" stroke="#c8881f" stroke-width="2"/><text x="96" y="98">身份证 · 驾照</text>
+    <rect x="76" y="116" width="12" height="12" rx="3" fill="#3B6D11"/><text x="96" y="126">充电线 · 充电宝</text>
+    <rect x="76" y="144" width="12" height="12" rx="3" fill="#fff" stroke="#c8881f" stroke-width="2"/><text x="96" y="154">雨伞 · 外套</text>
+  </g>
+  <rect x="150" y="150" width="120" height="30" rx="8" fill="#fff" stroke="#c8881f" stroke-width="1.2"/>
+  <text x="160" y="169" font-size="9" fill="#3a3128">各记各的，互不扰</text>
+</svg></div>
+</div>
+<div class="help-foot">这页是路书的配套说明，具体路线、店铺、天气以线上路书为准。打开路书，右下角「说明」随时能再看。</div>
+    </div>
+    <div class="memo-foot"><button class="memo-fbtn" onclick="closeHelp()">✕ 关闭说明</button></div>
+  </div>
+</div>
+
+<div class="memoov" id="memoov">
+  <div class="memo-sheet" id="memoSheet">
+    <div class="memo-grip"></div>
+    <div class="memo-hd">
+    <div class="memo-t">出行备忘清单</div>
+  </div>
+  <div class="memo-body" id="memoBody"></div>
+  <div class="memo-foot">
+    <button class="memo-fbtn pri wide" onclick="closeMemo()">✕ 关闭</button>
+    <button class="memo-fbtn" onclick="resetMemo()">🔄 重置</button>
+  </div>
+  </div>
+  <div class="memo-confirm" id="memoConfirm">
+    <div class="memo-cbox">
+      <div class="memo-ct">清空全部勾选记录？</div>
+      <div class="memo-cx">将清空<b>这台设备</b>上的全部清单勾选；记录不登录、不同步，换设备或清缓存会丢，且本次清空后<b>无法恢复</b>。</div>
+      <div class="memo-cacts">
+        <button class="memo-cbtn" onclick="cancelReset()">取消</button>
+        <button class="memo-cbtn danger" onclick="confirmReset()">确认清空</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var MEMO_HTML = `<div class="memo-sec">① 证件票据</div>
+<div class="memo-item" data-key="1|身份证（全员）"><span class="cb"></span><span class="tx">身份证（全员）</span></div>
+<div class="memo-item" data-key="1|驾驶证 + 行驶证"><span class="cb"></span><span class="tx">驾驶证 + 行驶证</span></div>
+<div class="memo-sec">② 衣物（按气候分层）</div>
+<div class="memo-item" data-key="2|广西 / 返程段（28–33°C）：夏装、速干、防晒衣帽"><span class="cb"></span><span class="tx">广西 / 返程段（28–33°C）：夏装、速干、防晒衣帽</span></div>
+<div class="memo-item" data-key="2|昆明 / 大理（18–25°C）：长袖 + 薄外套"><span class="cb"></span><span class="tx">昆明 / 大理（18–25°C）：长袖 + 薄外套</span></div>
+<div class="memo-item" data-key="2|丽江 / 雪山段（↓14°C、温差大）：薄羽绒 / 冲锋衣、抓绒、保暖内衣、围巾手套（老人小孩）、防风"><span class="cb"></span><span class="tx">丽江 / 雪山段（↓14°C、温差大）：薄羽绒 / 冲锋衣、抓绒、保暖内衣、围巾手套（老人小孩）、防风</span></div>
+<div class="memo-item" data-key="2|通用：防滑步行鞋（老人）、拖鞋（温泉）、雨具（明仕 / 大理可能雨）"><span class="cb"></span><span class="tx">通用：防滑步行鞋（老人）、拖鞋（温泉）、雨具（明仕 / 大理可能雨）</span></div>
+<div class="memo-item" data-key="2|泳衣（弥勒柏雅温泉 + 儿童泳池，老人按需）"><span class="cb"></span><span class="tx">泳衣（弥勒柏雅温泉 + 儿童泳池，老人按需）</span></div>
+<div class="memo-sec">③ 药品与健康</div>
+<div class="memo-item" data-key="3|老人常用药（肠胃 / 感冒）"><span class="cb"></span><span class="tx">老人常用药（肠胃 / 感冒）</span></div>
+<div class="memo-item" data-key="3|高反预防：氧气罐 / 红景天（我来买）"><span class="cb"></span><span class="tx">高反预防：氧气罐 / 红景天（我来买）</span></div>
+<div class="memo-item" data-key="3|小朋友药物：美林、退热、肠胃炎"><span class="cb"></span><span class="tx">小朋友药物：美林、退热、肠胃炎</span></div>
+<div class="memo-sec">④ 舒适护理</div>
+<div class="memo-item" data-key="4|老花镜 + 备用一副（长辈老花眼）"><span class="cb"></span><span class="tx">老花镜 + 备用一副（长辈老花眼）</span></div>
+<div class="memo-item" data-key="4|颈枕 / 腰靠（长辈长途久坐）"><span class="cb"></span><span class="tx">颈枕 / 腰靠（长辈长途久坐）</span></div>
+<div class="memo-item" data-key="4|防蚊液 / 驱蚊手环（广西段蚊虫多）"><span class="cb"></span><span class="tx">防蚊液 / 驱蚊手环（广西段蚊虫多）</span></div>
+<div class="memo-item" data-key="4|防晒霜 SPF50+"><span class="cb"></span><span class="tx">防晒霜 SPF50+</span></div>
+  <div class="memo-item" data-key="4|墨镜（高原紫外线强）"><span class="cb"></span><span class="tx">墨镜（高原紫外线强）</span></div>
+<div class="memo-item" data-key="4|润唇膏（高原干）"><span class="cb"></span><span class="tx">润唇膏（高原干）</span></div>
+<div class="memo-item" data-key="4|湿巾"><span class="cb"></span><span class="tx">湿巾</span></div>
+<div class="memo-item" data-key="4|毛巾、牙刷"><span class="cb"></span><span class="tx">毛巾、牙刷</span></div>
+<div class="memo-sec">⑤ 车辆</div>
+<div class="memo-item" data-key="5|车载充电"><span class="cb"></span><span class="tx">车载充电</span></div>
+<div class="memo-item" data-key="5|儿童安全座椅"><span class="cb"></span><span class="tx">儿童安全座椅</span></div>
+<div class="memo-sec">⑥ 电子与财物</div>
+<div class="memo-item" data-key="6|手机充电器"><span class="cb"></span><span class="tx">手机充电器</span></div>
+<div class="memo-item" data-key="6|充电宝"><span class="cb"></span><span class="tx">充电宝</span></div>
+<div class="memo-item" data-key="6|现金小额"><span class="cb"></span><span class="tx">现金小额</span></div>
+<div class="memo-item" data-key="6|银行卡"><span class="cb"></span><span class="tx">银行卡</span></div>
+<div class="memo-sec">⑦ 饮食与儿童</div>
+<div class="memo-item" data-key="7|零食（小宝途中）"><span class="cb"></span><span class="tx">零食（小宝途中）</span></div>
+<div class="memo-item" data-key="7|小孩安抚玩具"><span class="cb"></span><span class="tx">小孩安抚玩具</span></div>
+<div class="memo-item" data-key="7|保温杯（老人温水）"><span class="cb"></span><span class="tx">保温杯（老人温水）</span></div>
+<div class="memo-item" data-key="7|旅行便携水壶（我们有）"><span class="cb"></span><span class="tx">旅行便携水壶（我们有）</span></div>
+<div class="memo-item" data-key="7|矿泉水（长途段服务区稀疏）"><span class="cb"></span><span class="tx">矿泉水（长途段服务区稀疏）</span></div>
+<div class="memo-item" data-key="7|儿童餐具、奶粉 / 奶瓶（小宝）"><span class="cb"></span><span class="tx">儿童餐具、奶粉 / 奶瓶（小宝）</span></div>
+<div class="memo-item" data-key="7|可可牛奶（可可同行）"><span class="cb"></span><span class="tx">可可牛奶（可可同行）</span></div>
+<div class="memo-sec">⑧ 睡眠起居</div>
+<div class="memo-item" data-key="8|睡袋 / 隔脏便携床单"><span class="cb"></span><span class="tx">睡袋 / 隔脏便携床单</span></div>
+<div class="memo-note">勾选记录只存在这台设备的浏览器里（不登录、不同步、换设备或清缓存会丢）。</div>`;
+var MEMO_STORE = 'roadtrip_memo_v1';
+function memoLoad(){
+  try { return JSON.parse(window.localStorage.getItem(MEMO_STORE) || '{}'); } catch(e){ return {}; }
+}
+function memoSafe(o){
+  try { window.localStorage.setItem(MEMO_STORE, JSON.stringify(o)); } catch(e){}
+}
+function renderMemo(){
+  var body = document.getElementById('memoBody');
+  if(body.dataset.loaded) return;
+  body.innerHTML = MEMO_HTML;
+  var st = memoLoad();
+  body.querySelectorAll('.memo-item').forEach(function(it){
+    var k = it.getAttribute('data-key');
+    if(st[k]) it.classList.add('done');
+    it.addEventListener('click', function(){
+      it.classList.toggle('done');
+      var s = memoLoad();
+      if(it.classList.contains('done')) s[k] = 1; else delete s[k];
+      memoSafe(s);
+    });
+  });
+  body.dataset.loaded = '1';
+}
+function resetMemo(){ document.getElementById('memoConfirm').classList.add('on'); }
+function cancelReset(){ document.getElementById('memoConfirm').classList.remove('on'); }
+function confirmReset(){
+  try { window.localStorage.removeItem(MEMO_STORE); } catch(e){}
+  document.querySelectorAll('#memoBody .memo-item').forEach(function(it){ it.classList.remove('done'); });
+  document.getElementById('memoConfirm').classList.remove('on');
+}
+function openMemo(){ renderMemo(); document.getElementById('memoov').classList.add('on'); }
+function closeMemo(){ document.getElementById('memoov').classList.remove('on'); }
+document.getElementById('memoov').addEventListener('click', function(e){ if(e.target === this) closeMemo(); });
+function openHelp(){ document.getElementById('helpov').classList.add('on'); }
+function closeHelp(){ document.getElementById('helpov').classList.remove('on'); }
+document.getElementById('helpov').addEventListener('click', function(e){ if(e.target === this) closeHelp(); });
+
+</script>
+
+<!-- 全局固定浮层：玩/住/吃 快捷定位（视口右侧垂直居中，跟随当前滚动日重绘） -->
+<div class="locbar" id="locbar" aria-label="快速定位"></div>
+</body>
+</html>
