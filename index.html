@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="rt-build" content="20260909-1638">
+<meta name="rt-build" content="20260909-1652">
 <title>中秋+国庆游 9.18-10.4</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -1648,6 +1648,13 @@ function eggClick(){
     var e=document.getElementById('eggbtn'); if(!e) return;
     shown=true; e.classList.add('show');
   }
+  // 调试预览：URL 带 ?egg=1 立即弹出（跳过 DONE 标记与 5 秒等待），便于看效果
+  try{
+    if(/[?&]egg=1(&|#|$)/.test(location.search)){
+      var _e=document.getElementById('eggbtn');
+      if(_e){ shown=true; _e.classList.add('show'); }
+    }
+  }catch(_){}
   try{ if(!sessionStorage.getItem(DONE) && getms()>=TH) showEgg(); }catch(_){}
   setInterval(function(){
     if(document.visibilityState==='visible' && (!document.hasFocus || document.hasFocus())){
