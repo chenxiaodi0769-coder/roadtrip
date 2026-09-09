@@ -2,7 +2,7 @@
 <html lang="zh-CN" data-page-node-id="FwiaNpneDytba9YGE2uXKF">
 <head data-page-node-id="XIbrAyoOPDbBpVvtZ9YVAn">
 <meta charset="UTF-8" data-page-node-id="H6Bo6xqRm1zrZuumZOPZvd">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="leA3xsvY7jQCr0sarFOVyv">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="leA3xsvY7jQCr0sarFOVyv">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -11,6 +11,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#f4f1ea">
 <style>
   :root{
     --bg:#f4f1ea; --card:#ffffff; --ink:#1f1c18; --sub:#6b6358;
@@ -21,8 +22,8 @@
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
     font-size:17px;line-height:1.6;}
-  header{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.96);
-    backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 12px 8px;}
+  header{position:sticky;top:0;z-index:20;background:var(--bg);
+    border-bottom:1px solid var(--line);padding:max(10px,env(safe-area-inset-top,0px)) 12px 8px;}
   .hrow{display:flex;align-items:baseline;justify-content:space-between;gap:10px;}
   .htitle{font-size:18px;font-weight:800;letter-spacing:.5px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;}
   .ht-region{font-size:12px;font-weight:600;color:var(--sub);}
@@ -103,7 +104,7 @@
   .tip .ti{margin-right:4px;}
   /* 底部冷知识入口：文案（跑马灯）+ 上拉/点击动效提示，弱化呈现 */
   .kbbar{display:flex;align-items:center;gap:8px;margin-top:8px;max-width:640px;
-    padding:7px 10px;background:rgba(253,243,224,.94);border:1px solid #ecd9b0;
+    padding:7px 10px;background:#fbf3e2;border:1px solid var(--line);
     border-radius:10px;cursor:pointer;-webkit-tap-highlight-color:transparent;}
   .kbbar .kb-grab{display:none;}
   .kbbar .kb-go{flex:0 0 auto;font-size:11px;color:#8a6a2a;border-left:1px solid #ecd9b0;padding-left:8px;}
@@ -1617,6 +1618,7 @@ function closeTrivia(){ document.getElementById('kbov').classList.remove('on'); 
 function kbStep(dir){ renderTrivia(kbIdx + dir); }
 function kbRand(){ renderTrivia(Math.floor(Math.random()*TRIVIA_POOL.length)); }
 /* 冷知识彩蛋：单次标签内累计浏览满阈值后，右侧说明上方冒出抖动彩蛋，点击破裂进冷知识全屏 */
+var eggLastIdx=-1;
 function eggClick(){
   var e = document.getElementById('eggbtn');
   if(!e || e.classList.contains('burst')) return;
@@ -1630,12 +1632,14 @@ function eggClick(){
   }
   setTimeout(function(){
     try{ sessionStorage.setItem('roadtrip_egg_done','1'); }catch(_){}
-    openTrivia();
+    var n=TRIVIA_POOL.length, r;
+    do{ r=Math.floor(Math.random()*n); }while(n>1 && r===eggLastIdx);
+    eggLastIdx=r; openTrivia(r);
     e.style.display='none'; e.classList.remove('burst','show');
   }, 460);
 }
 (function(){
-  var KEY='roadtrip_view_ms', DONE='roadtrip_egg_done', TH=30*60*1000, shown=false;
+  var KEY='roadtrip_view_ms', DONE='roadtrip_egg_done', TH=8*60*1000, shown=false;
   function getms(){ try{ return parseInt(sessionStorage.getItem(KEY)||'0',10)||0; }catch(_){ return 0; } }
   function add(ms){ try{ sessionStorage.setItem(KEY, String(getms()+ms)); }catch(_){} }
   function showEgg(){
