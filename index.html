@@ -233,7 +233,7 @@
   @keyframes countIn{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
   @keyframes glowPulse{0%,100%{transform:scale(.92);opacity:.7}50%{transform:scale(1.08);opacity:1}}
 
-.topbtn{position:fixed;right:14px;bottom:66px;z-index:30;width:auto;box-sizing:border-box;height:42px;min-width:42px;padding:0 14px;border-radius:21px;
+.topbtn{position:fixed;right:14px;bottom:calc(env(safe-area-inset-bottom) + 76px);z-index:47;width:auto;box-sizing:border-box;height:42px;min-width:42px;padding:0 14px;border-radius:21px;
   background:rgba(255,253,247,.98);color:#b8860b;border:1px solid #e6cf9f;
   font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:4px;
   box-shadow:0 1px 6px rgba(0,0,0,.12);cursor:pointer;-webkit-tap-highlight-color:transparent;}
@@ -351,10 +351,10 @@
   .rtupd .rtupd-x{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.65);font-weight:400;}
 
 /* 说明浮层（路书怎么用） */
-#helpbtn{right:14px;bottom:116px;z-index:45;}
+#helpbtn{right:14px;bottom:calc(env(safe-area-inset-bottom) + 128px);z-index:47;}
 
 /* 冷知识彩蛋按钮（浏览满时长后解锁，右侧说明上方抖动） */
-#eggbtn{position:fixed;right:14px;bottom:166px;z-index:46;width:46px;height:46px;border-radius:50%;
+#eggbtn{position:fixed;right:14px;bottom:calc(env(safe-area-inset-bottom) + 180px);z-index:47;width:46px;height:46px;border-radius:50%;
   background:linear-gradient(135deg,#f3b95e,#c8881f);color:#fff;border:2px solid #ffe2b0;
   display:none;align-items:center;justify-content:center;font-size:13px;font-weight:700;cursor:pointer;
   box-shadow:0 6px 16px rgba(184,117,23,.45);-webkit-tap-highlight-color:transparent;overflow:visible;}
@@ -1639,7 +1639,7 @@ function eggClick(){
   }, 460);
 }
 (function(){
-  var KEY='roadtrip_view_ms', DONE='roadtrip_egg_done', TH=8*60*1000, shown=false;
+  var KEY='roadtrip_view_ms', DONE='roadtrip_egg_done', TH=5000, shown=false;
   function getms(){ try{ return parseInt(sessionStorage.getItem(KEY)||'0',10)||0; }catch(_){ return 0; } }
   function add(ms){ try{ sessionStorage.setItem(KEY, String(getms()+ms)); }catch(_){} }
   function showEgg(){
